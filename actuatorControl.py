@@ -16,6 +16,7 @@ def setup_gpio():
     try:
         gpio.setmode(gpio.BCM)
         mode = gpio.getmode()
+        print("** GPIO Initialised")
 
         gpio.setchannel(channel_list, gpio.OUT, initial = gpio.LOW)
     except:
@@ -27,10 +28,20 @@ def setup_gpio():
 def movement_auto(direction):
     if(direction == "up"):
         print("** Moving Forward")
-        gpio.output(M1P1, gpio.HIGH)
-        gpio.output(M1P1, gpio.HIGH)
-        gpio.output(M1P1, gpio.HIGH)
-        gpio.output(M1P1, gpio.HIGH)
+        # gpio.output(M1P1, gpio.HIGH)
+        # gpio.output(M1P1, gpio.HIGH)
+        # gpio.output(M1P1, gpio.HIGH)
+        # gpio.output(M1P1, gpio.HIGH)
+    elif(direction == "back"):
+        print("** Moving Reverse")
+    elif(direction == "left"):
+        print("** Moving left")
+    elif(direction == "right"):
+        print("** Moving right")
+    elif(direction == "rotate_left"):
+        print("** Turning Left")
+    elif(direction == "rotate_right"):
+        print("** Turning Right")
 
 def movement_controlled(direction, intensity):
     if(direction == "up"):
