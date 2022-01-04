@@ -1,6 +1,7 @@
 from cv2 import FastFeatureDetector, textureFlattening
 import pygame
 import botClient
+import sys
 
 pygame.init()
 pygame.joystick.init()
@@ -21,6 +22,7 @@ def get_button(jz):
     if jz.get_button(7) == 1:     
         botClient.disconnect()
         isconnected = False
+        sys.exit()
 
 # -------- Main Program Loop -----------
 while True:
