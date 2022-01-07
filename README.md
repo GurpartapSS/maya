@@ -1,4 +1,4 @@
-#project outline
+project outline
 
 
 while true:
@@ -16,3 +16,10 @@ while true:
         movement on audio
         tracking on
             if tracking off -- will not follow face/ person
+
+
+for "Not running on RPI!" https://github.com/gpiozero/gpiozero/issues/837
+chmod og+rwx gpio*
+or 
+sudo chown root:$USER /dev/gpiomem
+sudo chmod g+rw /dev/gpiomem
