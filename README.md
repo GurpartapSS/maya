@@ -19,7 +19,7 @@ while true:
 
 
 for "Not running on RPI!" https://github.com/gpiozero/gpiozero/issues/837
-chmod og+rwx gpio*
+sudo chmod og+rwx /dev/gpio*
 or 
 sudo chown root:$USER /dev/gpiomem
 sudo chmod g+rw /dev/gpiomem
