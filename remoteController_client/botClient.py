@@ -1,20 +1,8 @@
 import socket
 import time
+import NetworkConstants as nc
 
-BUTTON_ACC      = 0
-BUTTON_ROTR     = 1
-BUTTON_REV      = 2
-BUTTON_ROTL     = 3
-BUTTON_LEFT     = 4
-BUTTON_RIGHT    = 5
-BUTTON_DISC     = 7
-
-MSG_FORMAT = 64 #fixing msg length
-PORT = 5000
-SERVER = '10.0.0.203'
-FORMAT = 'utf-8'
-DISCONNECT_MSG = "!Disconnect"
-ADDR = (SERVER, PORT)
+ADDR = (nc.SERVER, nc.PORT)
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -39,16 +27,16 @@ def connection():
 
 def disconnect():
     try:
-        send(DISCONNECT_MSG)
+        send(nc.DISCONNECT_MSG)
         client.close()
     except:
         print(" **** Unable to disconnect check the network or try again ")
 
 def send(msg):
-    message = msg.encode(FORMAT)
+    message = msg.encode(nc.FORMAT)
     msg_length = len(message)
-    send_length = str(msg_length).encode(FORMAT)
-    send_length += b' ' * (MSG_FORMAT - len(send_length))
+    send_length = str(msg_length).encode(nc.FORMAT)
+    send_length += b' ' * (nc.MSG_FORMAT - len(send_length))
     client.send(send_length)
     client.send(message)
 

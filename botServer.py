@@ -1,25 +1,11 @@
-
-BUTTON_DISC     = 7
-BUTTON_ACC      = BUTTON_DISC - 0
-BUTTON_ROTR     = BUTTON_DISC - 1
-BUTTON_REV      = BUTTON_DISC - 2
-BUTTON_ROTL     = BUTTON_DISC - 3
-BUTTON_LEFT     = BUTTON_DISC - 4
-BUTTON_RIGHT    = BUTTON_DISC - 5
-
-
-
 import socket
 import threading
 import actuatorControl
+import NetworkConstants as nc
 
 
-MSG_FORMAT = 64 #fixing msg length
-PORT = 5000
 SERVER = socket.gethostbyname(socket.gethostname())
-ADDR = (SERVER, PORT)
-FORMAT = 'utf-8'
-DISCONNECT_MSG = "!Disconnect"
+ADDR = (SERVER, nc.PORT)
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(ADDR)
 
@@ -29,12 +15,12 @@ def handle_clinet(conns, addr):
     connected = True
     while(connected):
         # will not pass next line of code unless we recieve a msg
-        msg_length = conns.recv(MSG_FORMAT).decode(FORMAT)
+        msg_length = conns.recv(nc.MSG_FORMAT).decode(nc.FORMAT)
         if msg_length:
             msg_length = int(msg_length)
-            msg = conns.recv(msg_length).decode(FORMAT)
+            msg = conns.recv(msg_length).decode(nc.FORMAT)
             print(f"[{addr}] {msg}")
-            if msg == DISCONNECT_MSG:
+            if msg == nc.DISCONNECT_MSG:
                 connected = False
             else:
                 recv_data = int(msg) 
