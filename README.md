@@ -23,3 +23,7 @@ sudo chmod og+rwx /dev/gpio*
 or 
 sudo chown root:$USER /dev/gpiomem
 sudo chmod g+rw /dev/gpiomem
+
+
+To get list of camera devices use:
+v4l2-ctl --list-devices
