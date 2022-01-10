@@ -27,3 +27,6 @@ sudo chmod g+rw /dev/gpiomem
 
 To get list of camera devices use:
 v4l2-ctl --list-devices
+
+
+faces: https://github.com/ibaiGorordo/BlazeFace-TFLite-Inference/blob/f43d126b06fffafb700113820dfa1618635a8f28/BlazeFaceDetection/blazeFaceDetector.py#L151
