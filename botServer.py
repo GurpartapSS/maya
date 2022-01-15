@@ -2,6 +2,7 @@ import socket
 import threading
 import actuatorControl
 import NetworkConstants as nc
+import JoystickConstants as jc
 
 
 SERVER = socket.gethostbyname(socket.gethostname())
@@ -44,12 +45,12 @@ def read_msg(msg):
     dir = "STOP"
     ## Check if any valid bit is set
     if (int(msg) & 127):
-        acc = int((msg)[BUTTON_ACC])
-        rev = int((msg)[BUTTON_REV])
-        left = int((msg)[BUTTON_LEFT])
-        right = int((msg)[BUTTON_RIGHT])
-        rotate_left = int((msg)[BUTTON_ROTL])
-        rotate_right = int((msg)[BUTTON_ROTR])
+        acc = int((msg)[jc.BUTTON_ACC])
+        rev = int((msg)[jc.BUTTON_REV])
+        left = int((msg)[jc.BUTTON_LEFT])
+        right = int((msg)[jc.BUTTON_RIGHT])
+        rotate_left = int((msg)[jc.BUTTON_ROTL])
+        rotate_right = int((msg)[jc.BUTTON_ROTR])
         if(acc):
             dir = "up"
         elif(rev):
