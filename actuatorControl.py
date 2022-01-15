@@ -21,7 +21,7 @@ gpio.setmode(gpio.BCM)
 mode = gpio.getmode()
 print("** GPIO Initialised")
 
-gpio.setchannel(channel_list, gpio.OUT, initial = gpio.LOW)
+gpio.setup(channel_list, gpio.OUT, initial = gpio.LOW)
     # except:
         # print("** Unable to initialise gpio")
 
@@ -56,7 +56,7 @@ def movement_controlled(direction, intensity):
         gpio.output(M1P1, gpio.HIGH)
 
 def movement_stop():
-    gpio(channel_list, gpio.LOW)
+    gpio.output(channel_list, gpio.LOW)
 
 # setup_gpio()
 # movement_auto("up")
