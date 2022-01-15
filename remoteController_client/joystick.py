@@ -1,7 +1,5 @@
-from cv2 import FastFeatureDetector, textureFlattening
 import pygame
-import botClient
-import sys
+import botClient as bc
 
 pygame.init()
 pygame.joystick.init()
@@ -9,20 +7,28 @@ pygame.joystick.init()
 isconnected = False
 
 def get_button(jz):
-    global isconnected
-    if not isconnected:
-        botClient.connection()
-        isconnected = True
+
     DATA_MSG = 0
     for i in range(jz.get_numbuttons()):
         print(f"button {i} value {jz.get_button(i)}")
         DATA_MSG |= (jz.get_button(i) << i)
     print(DATA_MSG)
-    botClient.send(str(DATA_MSG))
+
+    global isconnected
+    if not isconnected and (DATA_MSG != 0):
+        global rc
+        rc = bc.remoteclient()
+        rc.connection()
+        isconnected = True
+    
+    if isconnected:
+        rc.send(str(DATA_MSG))
+    
     if jz.get_button(7) == 1:     
-        botClient.disconnect()
+        rc.disconnection()
+        del rc
         isconnected = False
-        sys.exit()
+        # sys.exit()
 
 # -------- Main Program Loop -----------
 while True:
@@ -46,5 +52,3 @@ while True:
         elif event.type == pygame.JOYBUTTONUP:
             get_button(pygame.joystick.Joystick(i))
             print("Joystick button released.")
-
-pygame.quit()
