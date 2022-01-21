@@ -5,6 +5,11 @@ while true:
 
     voice recognition -- set automatic/ manual mode (const in background)
 
+    Need something that can detect offline and use various keywords
+    1. Tflite model to detect Keyword 
+    2. https://www.seeedstudio.com/blog/2020/01/23/offline-speech-recognition-on-raspberry-pi-4-with-respeaker/
+    3. Use coral library -- https://github.com/google-coral/project-keyword-spotter
+
     if manual mode:
 
         motor controlled by joystick 
