@@ -1,10 +1,10 @@
 import socket
 import threading
 import actuatorControl
-import NetworkConstants as nc
-import JoystickConstants as jc
+import constants
 
-
+nc = constants.networkConstant()
+jc = constants.joystickConstant()
 SERVER = socket.gethostbyname(socket.gethostname())
 ADDR = (SERVER, nc.PORT)
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

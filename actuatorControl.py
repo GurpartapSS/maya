@@ -31,7 +31,7 @@ gpio.setup(channel_list, gpio.OUT, initial = gpio.LOW)
 def movement_auto(direction):
     if(direction == "up"):
         print("** Moving Forward")
-        gpio.output(channel_forward, gpio.HIGH)
+        # gpio.output(channel_forward, gpio.HIGH)
         # gpio.output(M1P1, gpio.HIGH)
         # gpio.output(M1P1, gpio.HIGH)
         # gpio.output(M1P1, gpio.HIGH)
@@ -50,18 +50,18 @@ def movement_auto(direction):
 def movement_controlled(direction, intensity):
     if(direction == "up"):
         print("** Moving Forward at intensity ", intensity)
-        gpio.output(M1P1, gpio.HIGH)
-        gpio.output(M1P1, gpio.HIGH)
-        gpio.output(M1P1, gpio.HIGH)
-        gpio.output(M1P1, gpio.HIGH)
+        # gpio.output(M1P1, gpio.HIGH)
+        # gpio.output(M1P1, gpio.HIGH)
+        # gpio.output(M1P1, gpio.HIGH)
+        # gpio.output(M1P1, gpio.HIGH)
 
 def movement_stop():
     gpio.output(channel_list, gpio.LOW)
 
 # setup_gpio()
 # movement_auto("up")
-gpio.output(M4P1, gpio.HIGH) # for left back forward 
-gpio.output(M4P2, gpio.LOW) #for right back back # for left forward back # for right forward for
-time.sleep(2)
-movement_stop()
-gpio.cleanup()
+# gpio.output(M4P1, gpio.HIGH) # for left back forward 
+# gpio.output(M4P2, gpio.LOW) #for right back back # for left forward back # for right forward for
+# time.sleep(2)
+# movement_stop()
+# gpio.cleanup()
