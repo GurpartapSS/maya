@@ -10,6 +10,14 @@ while true:
     2. https://www.seeedstudio.com/blog/2020/01/23/offline-speech-recognition-on-raspberry-pi-4-with-respeaker/
     3. Use coral library -- https://github.com/google-coral/project-keyword-spotter
 
+    To get device index:
+    import sounddevice as sd
+    print(sd.query_devices()) 
+
+    or 
+
+    cat /proc/asound/cards
+
     if manual mode:
 
         motor controlled by joystick 
