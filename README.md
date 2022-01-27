@@ -8,6 +8,9 @@ while true:
     Need something that can detect offline and use various keywords
     1. Tflite model to detect Keyword 
     2. https://www.seeedstudio.com/blog/2020/01/23/offline-speech-recognition-on-raspberry-pi-4-with-respeaker/
+        Models can be Downloaded from : https://github.com/mozilla/DeepSpeech/releases/tag/v0.9.3
+        For Queries, check: https://discourse.mozilla.org/
+
     3. Use coral library -- https://github.com/google-coral/project-keyword-spotter
 
     To get device index:
