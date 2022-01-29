@@ -2,11 +2,13 @@ import deepspeech
 import pyaudio
 import numpy as np
 from halo import Halo
-Model_path = 'Models/deepspeech-0.9.3-models.tflite'
-scorer_path = 'Models/deepspeech-0.9.3-models.scorer'
+from audio_tools import VADAudio
+
+Model_path = 'Models/deepspeech-0.9.2-models.tflite'
+# scorer_path = 'Models/deepspeech-0.9.3-models.scorer'
 model = deepspeech.Model(Model_path)
-model.enableExternalScorer(scorer_path=scorer_path)
-model.beamWidth = 500
+# model.enableExternalScorer(scorer_path=scorer_path)
+# model.beamWidth = 500
 
 import matplotlib.pyplot as plt 
 
@@ -51,7 +53,7 @@ spinner = Halo('Loading ..')
 for frame in frames:
     if spinner: spinner.start()
     st.feedAudioContent(frame)
-    print(st.intermediateDecode())
+    # print(st.intermediateDecode())
 
 text = st.finishStream()
 spinner.succeed(text)
