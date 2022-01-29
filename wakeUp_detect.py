@@ -14,17 +14,14 @@
 # limitations under the License.
 #
 
-from sqlite3 import adapt
 import pvporcupine as pvp
 import pyaudio
 import struct
 import traceback
 
-from pygame import K_y
-
-class AudioDetection:
-
+class HotWord:
     def __init__(self):
+        self.__err = 1
         self.__num_keywords = 1
         self.__keyword = 'sheldon'
         self.__model_path = pvp.MODEL_PATH
@@ -69,6 +66,7 @@ class AudioDetection:
                     print(f"{self.__keyword} Detected!")
                     stream.close()
                     print("Stream Closed..")
+                    self.__err = 0
                     break
         
         except KeyboardInterrupt:
@@ -87,9 +85,11 @@ class AudioDetection:
             if stream is not None:
                 stream.close()
 
+        return self.__err
+
 # Test
 # if __name__ == '__main__':
-#     ad = AudioDetection()
-#     ad.getKeyword()
+#     ad = HotWord()
+#     check = ad.getKeyword()
 #     del ad
 
