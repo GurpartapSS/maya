@@ -50,3 +50,5 @@ faces: https://github.com/ibaiGorordo/BlazeFace-TFLite-Inference/blob/f43d126b06
 common problem for python lib conflict in venv:
 
 https://www.py4u.net/discuss/140092
+
+Issue: Failed to load delegate from libedgetpu.so.1
