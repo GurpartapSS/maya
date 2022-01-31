@@ -1,26 +1,29 @@
 import RPi.GPIO as gpio
 import time
 
-#define the GPIO pins that we will use 
-M1P1 = 5
-M1P2 = 6
-M2P1 = 13
-M2P2 = 19
-M3P1 = 12
-M3P2 = 16
-M4P1 = 20
-M4P2 = 21
-
-channel_list = (M1P1,M1P2,M2P1,M2P2,M3P1,M3P2,M4P1,M4P2)
-channel_forward = (M1P1,M2P2,M3P2,M4P1)
-channel_rev = (M1P2,M2P1,M3P1,M4P2)
-channel_left = (M1P2,M2P1,M3P1,M4P2)
-channel_right = (M1P2,M2P1,M3P1,M4P2)
-
-
 class actuator:
     def __init__(self):
         self.gpio = gpio
+        #define the GPIO pins that we will use 
+        self.__RL_F = 5    #RL-F --> Rear_Left_Forward
+        self.__RL_R = 6
+        self.__RR_R = 13
+        self.__RR_F = 19
+        self.__FL_R = 12
+        self.__FL_F = 16
+        self.__FR_F = 20
+        self.__FR_R = 21
+
+        self.channel_list = (self.__RL_F,self.__RL_R,self.__RR_R,self.__RR_F,self.__FL_R,self.__FL_F,self.__FR_F,self.__FR_R)
+        self.channel_forward = (self.__RL_F,self.__RR_F,self.__FL_F,self.__FR_F)
+        self.channel_rev = (self.__RL_R,self.__RR_R,self.__FL_R,self.__FR_R)
+        self.channel_right = (self.__RR_R,self.__RL_F,self.__FL_R,self.__FR_F)
+        self.channel_left = (self.__FL_F,self.__FR_R,self.__RL_R,self.__RR_F)
+        self.channel_Rup = (self.__FR_F,self.__RL_F)
+        self.channel_Lup = (self.__FL_F,self.__RR_F)
+        self.channel_Rdown = (self.__FL_R,self.__RR_R)
+        self.channel_Ldown = (self.__FR_R,self.__RL_R)
+        self.channel_Turn = (self.__RL_F,self.__RR_R,self.__FL_F,self.__FR_R)
 
     def __del__(self):
         self.gpio.cleanup()
@@ -29,9 +32,8 @@ class actuator:
         try:
             self.gpio.setmode(gpio.BCM)
             mode = self.gpio.getmode()
-            print("** GPIO Initialised")
-
-            self.gpio.setup(channel_list, gpio.OUT, initial = gpio.LOW)
+            print("** GPIO Initialised Mode:", mode)
+            self.gpio.setup(self.channel_list, gpio.OUT, initial = gpio.LOW)
         except:
             print("** Unable to initialise gpio")
 
@@ -41,9 +43,9 @@ class actuator:
     def movement_auto(self,direction):
         if(direction == "up"):
             print("** Moving Forward")
-            self.gpio.output(channel_forward, gpio.HIGH)
+            # self.gpio.output(self.channel_forward, gpio.HIGH)
         elif(direction == "back"):
-            self.gpio.output(channel_rev, gpio.HIGH)
+            # self.gpio.output(self.channel_rev, gpio.HIGH)
             print("** Moving Reverse")
         elif(direction == "left"):
             print("** Moving left")
@@ -53,12 +55,14 @@ class actuator:
             print("** Turning Left")
         elif(direction == "rotate_right"):
             print("** Turning Right")
+        elif(direction == "right_up"):
+            print("** Going Right up")
 
     def movement_controlled(direction, intensity):
         print("**** Not implemented!")
 
     def movement_stop(self):
-        self.gpio.output(channel_list, gpio.LOW)
+        self.gpio.output(self.channel_list, gpio.LOW)
 
 
 # setup_gpio()

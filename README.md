@@ -52,3 +52,11 @@ common problem for python lib conflict in venv:
 https://www.py4u.net/discuss/140092
 
 Issue: Failed to load delegate from libedgetpu.so.1
+
+
+Issue: server.bind(ADDR)
+    OSError: [Errno 98] Address already in use
+
+Solution: Port is already allocated:
+netstat -tulpn
+kill <pid>

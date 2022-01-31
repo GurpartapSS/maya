@@ -51,6 +51,7 @@ def read_msg(msg):
         right = int((msg)[jc.BUTTON_RIGHT])
         rotate_left = int((msg)[jc.BUTTON_ROTL])
         rotate_right = int((msg)[jc.BUTTON_ROTR])
+        right_up = int((msg)[jc.BUTTON_RIGHT_UP])
         if(acc):
             dir = "up"
         elif(rev):
@@ -63,6 +64,8 @@ def read_msg(msg):
             dir = "rotate_left"
         elif(rotate_right):
             dir = "rotate_right"
+        elif(right_up):
+            dir = "right_up"
     else:
         print("Stop!")
     

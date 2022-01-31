@@ -7,6 +7,7 @@ class joystickConstant:
         BUTTON_ROTL     = BUTTON_DISC - 3
         BUTTON_LEFT     = BUTTON_DISC - 4
         BUTTON_RIGHT    = BUTTON_DISC - 5
+        BUTTON_RIGHT_UP = BUTTON_DISC - 6
 
 class networkConstant:
     MSG_FORMAT = 64 #fixing msg length
