@@ -66,8 +66,10 @@ def read_msg(msg):
     else:
         print("Stop!")
     
-    actuatorControl.movement_auto(dir)
+    motor.movement_auto(dir)
 
 print(f" Starting Server .... ")
+motor = actuatorControl.actuator()
+motor.setup_gpio()
 start()
 

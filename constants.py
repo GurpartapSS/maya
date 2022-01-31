@@ -13,4 +13,4 @@ class networkConstant:
     PORT = 5000
     FORMAT = 'utf-8'
     DISCONNECT_MSG = "!Disconnect"
-    SERVER = '10.0.0    .203'
+    SERVER = '10.0.0.203'
