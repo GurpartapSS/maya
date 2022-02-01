@@ -64,17 +64,7 @@ class actuator:
     def movement_stop(self):
         self.gpio.output(self.channel_list, gpio.LOW)
 
-
-# setup_gpio()
-# movement_auto("back")
-# # time.sleep(1)
-# movement_stop()
-# time.sleep(1)
-# movement_auto("up")
-# # time.sleep(1)
-# movement_stop()
-# gpio_clean()
-
+## Test
 # t = actuator()
 # t.setup_gpio()
 # t.movement_auto("up")
