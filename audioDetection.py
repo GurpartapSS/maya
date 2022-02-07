@@ -10,7 +10,7 @@ class audioRec:
     def getText(self):
         global text
         with sr.Microphone() as source:
-            print("Listening..")
+            print("Listening for command ...")
             audio = self.__r.listen(source, timeout= 5)
 
         try:

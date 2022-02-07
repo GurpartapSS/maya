@@ -33,7 +33,6 @@ class HotWord:
         self.__channels = 1
 
     def getKeyword(self):
-        print(f'listening for: {self.__keyword}')
 
         pa = None
         stream = None
@@ -52,7 +51,7 @@ class HotWord:
                 rate=porcupine.sample_rate,
                 frames_per_buffer=porcupine.frame_length,
                 input=True)
-            print("Listening ...")
+            print(f'listening for: {self.__keyword} ...')
 
             while(True):
     

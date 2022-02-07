@@ -14,7 +14,7 @@ class faceCoral:
         self.scoreTHreshold = 0.7
 
 
-    def main(self):
+    def detectFace_AND_apply_boundingBox(self):
         cap = cv2.VideoCapture(0)
 
         while True:
@@ -45,4 +45,4 @@ class faceCoral:
 
 if __name__ == '__main__':
     f = faceCoral()
-    f.main()
+    f.detectFace_AND_apply_boundingBox()
