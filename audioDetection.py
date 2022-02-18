@@ -11,7 +11,7 @@ class audioRec:
         global text
         with sr.Microphone() as source:
             print("Listening..")
-            audio = self.__r.listen(source, timeout= 5)
+            audio = self.__r.listen(source)
 
         try:
             text = self.__r.recognize_google(audio)
