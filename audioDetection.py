@@ -1,5 +1,3 @@
-from time import time
-from xml.etree.ElementInclude import include
 import speech_recognition as sr
 import wakeUp_detect
 
