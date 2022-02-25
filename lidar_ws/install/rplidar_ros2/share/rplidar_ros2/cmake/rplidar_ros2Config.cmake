@@ -1,0 +1,1 @@
+/home/ubuntu/bots/autoBot/lidar_ws/build/rplidar_ros2/ament_cmake_core/rplidar_ros2Config.cmake

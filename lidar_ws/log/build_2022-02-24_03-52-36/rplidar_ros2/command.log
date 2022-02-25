@@ -1,0 +1,2 @@
+Invoking command in '/home/ubuntu/bots/autoBot/lidar_ws/build/rplidar_ros2': /usr/bin/cmake /home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros -DCMAKE_INSTALL_PREFIX=/home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2
+Invoked command in '/home/ubuntu/bots/autoBot/lidar_ws/build/rplidar_ros2' returned '1': /usr/bin/cmake /home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros -DCMAKE_INSTALL_PREFIX=/home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2

@@ -60,3 +60,8 @@ Issue: server.bind(ADDR)
 Solution: Port is already allocated:
 netstat -tulpn
 kill <pid>
+
+Mappping and Localisation
+Install Ros2 foxy 
+adding rplidar -- https://github.com/Slamtec/rplidar_ros/tree/ros2
+SLAM: https://index.ros.org/r/cartographer/github-ros2-cartographer/#foxy

@@ -1,0 +1,411 @@
+[0.000000] (-) TimerEvent: {}
+[0.001146] (rplidar_ros2) JobQueued: {'identifier': 'rplidar_ros2', 'dependencies': OrderedDict()}
+[0.002580] (rplidar_ros2) JobStarted: {'identifier': 'rplidar_ros2'}
+[0.069632] (rplidar_ros2) JobProgress: {'identifier': 'rplidar_ros2', 'progress': 'cmake'}
+[0.072352] (rplidar_ros2) Command: {'cmd': ['/usr/bin/cmake', '/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2'], 'cwd': '/home/ubuntu/bots/autoBot/lidar_ws/build/rplidar_ros2', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ubuntu'), ('SSH_CLIENT', '10.0.0.122 61438 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/ubuntu/.vscode-server/bin/f80445acd5a3dadef24aa209168452a3d97cc326/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ubuntu/ros2_foxy/ros2-linux/opt/yaml_cpp_vendor/lib:/home/ubuntu/ros2_foxy/ros2-linux/opt/rviz_ogre_vendor/lib:/home/ubuntu/ros2_foxy/ros2-linux/lib'), ('BROWSER', '/home/ubuntu/.vscode-server/bin/f80445acd5a3dadef24aa209168452a3d97cc326/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/ubuntu'), ('OLDPWD', '/home/ubuntu/bots/autoBot/lidar_ws/src'), ('TERM_PROGRAM_VERSION', '1.64.2'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-099592a9-1b82-49f2-8273-6c658d118375.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/ubuntu/.vscode-server/bin/f80445acd5a3dadef24aa209168452a3d97cc326/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/ubuntu/.vscode-server/bin/f80445acd5a3dadef24aa209168452a3d97cc326/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/ubuntu/ros2_foxy/ros2-linux'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'ubuntu'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/ubuntu/ros2_foxy/ros2-linux/lib/aarch64-linux-gnu/pkgconfig:/home/ubuntu/ros2_foxy/ros2-linux/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '3'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/ubuntu/ros2_foxy/ros2-linux/bin:/home/ubuntu/.vscode-server/bin/f80445acd5a3dadef24aa209168452a3d97cc326/bin/remote-cli:/home/ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-9519c50bea.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/ubuntu/ros2_foxy/ros2-linux'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/ubuntu/bots/autoBot/lidar_ws/build/rplidar_ros2'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '10.0.0.122 61438 10.0.0.203 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ubuntu/ros2_foxy/ros2-linux/lib/python3.8/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/ubuntu/ros2_foxy/ros2-linux')]), 'shell': False}
+[0.099042] (-) TimerEvent: {}
+[0.192375] (rplidar_ros2) StdoutLine: {'line': b'-- Found ament_cmake: 0.9.9 (/home/ubuntu/ros2_foxy/ros2-linux/share/ament_cmake/cmake)\n'}
+[0.199214] (-) TimerEvent: {}
+[0.299941] (-) TimerEvent: {}
+[0.348253] (rplidar_ros2) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") \n'}
+[0.349031] (rplidar_ros2) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.400117] (-) TimerEvent: {}
+[0.500864] (-) TimerEvent: {}
+[0.601636] (-) TimerEvent: {}
+[0.702324] (-) TimerEvent: {}
+[0.803064] (-) TimerEvent: {}
+[0.903865] (-) TimerEvent: {}
+[1.004569] (-) TimerEvent: {}
+[1.105297] (-) TimerEvent: {}
+[1.206118] (-) TimerEvent: {}
+[1.255859] (rplidar_ros2) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[1.306290] (-) TimerEvent: {}
+[1.407024] (-) TimerEvent: {}
+[1.507805] (-) TimerEvent: {}
+[1.558079] (rplidar_ros2) StdoutLine: {'line': b'-- Found rclcpp: 2.4.1 (/home/ubuntu/ros2_foxy/ros2-linux/share/rclcpp/cmake)\n'}
+[1.607971] (-) TimerEvent: {}
+[1.708827] (-) TimerEvent: {}
+[1.809613] (-) TimerEvent: {}
+[1.910384] (-) TimerEvent: {}
+[1.975121] (rplidar_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.010573] (-) TimerEvent: {}
+[2.050205] (rplidar_ros2) StdoutLine: {'line': b'-- Found rosidl_adapter: 1.2.1 (/home/ubuntu/ros2_foxy/ros2-linux/share/rosidl_adapter/cmake)\n'}
+[2.110761] (-) TimerEvent: {}
+[2.211567] (-) TimerEvent: {}
+[2.312665] (-) TimerEvent: {}
+[2.413901] (-) TimerEvent: {}
+[2.515035] (-) TimerEvent: {}
+[2.616341] (-) TimerEvent: {}
+[2.717456] (-) TimerEvent: {}
+[2.818295] (-) TimerEvent: {}
+[2.919166] (-) TimerEvent: {}
+[3.020116] (-) TimerEvent: {}
+[3.120965] (-) TimerEvent: {}
+[3.221819] (-) TimerEvent: {}
+[3.265798] (rplidar_ros2) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "1.1.1f")  \n'}
+[3.322026] (-) TimerEvent: {}
+[3.422837] (-) TimerEvent: {}
+[3.523609] (-) TimerEvent: {}
+[3.571273] (rplidar_ros2) StdoutLine: {'line': b'-- Found FastRTPS: /home/ubuntu/ros2_foxy/ros2-linux/include  \n'}
+[3.623800] (-) TimerEvent: {}
+[3.724709] (-) TimerEvent: {}
+[3.825491] (-) TimerEvent: {}
+[3.926279] (-) TimerEvent: {}
+[4.027051] (-) TimerEvent: {}
+[4.127948] (-) TimerEvent: {}
+[4.228774] (-) TimerEvent: {}
+[4.300954] (rplidar_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[4.328938] (-) TimerEvent: {}
+[4.429809] (-) TimerEvent: {}
+[4.530621] (-) TimerEvent: {}
+[4.631479] (-) TimerEvent: {}
+[4.731726] (rplidar_ros2) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 1.0.3 (/home/ubuntu/ros2_foxy/ros2-linux/share/rmw_implementation_cmake/cmake)\n'}
+[4.732391] (-) TimerEvent: {}
+[4.743656] (rplidar_ros2) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[4.752450] (rplidar_ros2) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[4.832644] (-) TimerEvent: {}
+[4.933555] (-) TimerEvent: {}
+[5.034442] (-) TimerEvent: {}
+[5.122555] (rplidar_ros2) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[5.123974] (rplidar_ros2) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[5.134613] (-) TimerEvent: {}
+[5.235404] (-) TimerEvent: {}
+[5.336388] (-) TimerEvent: {}
+[5.437396] (-) TimerEvent: {}
+[5.456194] (rplidar_ros2) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed\n'}
+[5.457224] (rplidar_ros2) StdoutLine: {'line': b'-- Looking for pthread_create in pthreads\n'}
+[5.537682] (-) TimerEvent: {}
+[5.638576] (-) TimerEvent: {}
+[5.733270] (rplidar_ros2) StdoutLine: {'line': b'-- Looking for pthread_create in pthreads - not found\n'}
+[5.734474] (rplidar_ros2) StdoutLine: {'line': b'-- Looking for pthread_create in pthread\n'}
+[5.738732] (-) TimerEvent: {}
+[5.839593] (-) TimerEvent: {}
+[5.940674] (-) TimerEvent: {}
+[6.041492] (-) TimerEvent: {}
+[6.059113] (rplidar_ros2) StdoutLine: {'line': b'-- Looking for pthread_create in pthread - found\n'}
+[6.064831] (rplidar_ros2) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[6.141777] (-) TimerEvent: {}
+[6.242746] (-) TimerEvent: {}
+[6.343566] (-) TimerEvent: {}
+[6.444449] (-) TimerEvent: {}
+[6.545267] (-) TimerEvent: {}
+[6.608024] (rplidar_ros2) StdoutLine: {'line': b'-- Found sensor_msgs: 2.0.5 (/home/ubuntu/ros2_foxy/ros2-linux/share/sensor_msgs/cmake)\n'}
+[6.645441] (-) TimerEvent: {}
+[6.746287] (-) TimerEvent: {}
+[6.847112] (-) TimerEvent: {}
+[6.947874] (-) TimerEvent: {}
+[7.048628] (-) TimerEvent: {}
+[7.149422] (-) TimerEvent: {}
+[7.250256] (-) TimerEvent: {}
+[7.301117] (rplidar_ros2) StdoutLine: {'line': b'-- Found std_srvs: 2.0.5 (/home/ubuntu/ros2_foxy/ros2-linux/share/std_srvs/cmake)\n'}
+[7.350447] (-) TimerEvent: {}
+[7.451232] (-) TimerEvent: {}
+[7.551985] (-) TimerEvent: {}
+[7.652731] (-) TimerEvent: {}
+[7.696489] (rplidar_ros2) StdoutLine: {'line': b'-- Configuring done\n'}
+[7.735928] (rplidar_ros2) StdoutLine: {'line': b'-- Generating done\n'}
+[7.742751] (rplidar_ros2) StdoutLine: {'line': b'-- Build files have been written to: /home/ubuntu/bots/autoBot/lidar_ws/build/rplidar_ros2\n'}
+[7.752982] (-) TimerEvent: {}
+[7.769061] (rplidar_ros2) CommandEnded: {'returncode': 0}
+[7.772272] (rplidar_ros2) JobProgress: {'identifier': 'rplidar_ros2', 'progress': 'build'}
+[7.775967] (rplidar_ros2) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ubuntu/bots/autoBot/lidar_ws/build/rplidar_ros2', '--', '-j4', '-l4'], 'cwd': '/home/ubuntu/bots/autoBot/lidar_ws/build/rplidar_ros2', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ubuntu'), ('SSH_CLIENT', '10.0.0.122 61438 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/ubuntu/.vscode-server/bin/f80445acd5a3dadef24aa209168452a3d97cc326/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ubuntu/ros2_foxy/ros2-linux/opt/yaml_cpp_vendor/lib:/home/ubuntu/ros2_foxy/ros2-linux/opt/rviz_ogre_vendor/lib:/home/ubuntu/ros2_foxy/ros2-linux/lib'), ('BROWSER', '/home/ubuntu/.vscode-server/bin/f80445acd5a3dadef24aa209168452a3d97cc326/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/ubuntu'), ('OLDPWD', '/home/ubuntu/bots/autoBot/lidar_ws/src'), ('TERM_PROGRAM_VERSION', '1.64.2'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-099592a9-1b82-49f2-8273-6c658d118375.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/ubuntu/.vscode-server/bin/f80445acd5a3dadef24aa209168452a3d97cc326/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/ubuntu/.vscode-server/bin/f80445acd5a3dadef24aa209168452a3d97cc326/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/ubuntu/ros2_foxy/ros2-linux'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'ubuntu'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/ubuntu/ros2_foxy/ros2-linux/lib/aarch64-linux-gnu/pkgconfig:/home/ubuntu/ros2_foxy/ros2-linux/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '3'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/ubuntu/ros2_foxy/ros2-linux/bin:/home/ubuntu/.vscode-server/bin/f80445acd5a3dadef24aa209168452a3d97cc326/bin/remote-cli:/home/ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-9519c50bea.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/ubuntu/ros2_foxy/ros2-linux'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/ubuntu/bots/autoBot/lidar_ws/build/rplidar_ros2'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '10.0.0.122 61438 10.0.0.203 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ubuntu/ros2_foxy/ros2-linux/lib/python3.8/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/ubuntu/ros2_foxy/ros2-linux')]), 'shell': False}
+[7.853314] (-) TimerEvent: {}
+[7.956106] (-) TimerEvent: {}
+[7.989430] (rplidar_ros2) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target rplidar_scan_publisher\x1b[0m\n'}
+[8.056323] (-) TimerEvent: {}
+[8.157216] (-) TimerEvent: {}
+[8.258160] (-) TimerEvent: {}
+[8.359044] (-) TimerEvent: {}
+[8.459841] (-) TimerEvent: {}
+[8.560646] (-) TimerEvent: {}
+[8.564638] (rplidar_ros2) StdoutLine: {'line': b'[ 14%] \x1b[32mBuilding CXX object CMakeFiles/rplidar_scan_publisher.dir/sdk/src/arch/linux/net_serial.cpp.o\x1b[0m\n'}
+[8.568203] (rplidar_ros2) StdoutLine: {'line': b'[ 28%] \x1b[32mBuilding CXX object CMakeFiles/rplidar_scan_publisher.dir/src/rplidar_scan_publisher.cpp.o\x1b[0m\n'}
+[8.577140] (rplidar_ros2) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/rplidar_scan_publisher.dir/sdk/src/arch/linux/timer.cpp.o\x1b[0m\n'}
+[8.582803] (rplidar_ros2) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding CXX object CMakeFiles/rplidar_scan_publisher.dir/sdk/src/arch/linux/net_socket.cpp.o\x1b[0m\n'}
+[8.660839] (-) TimerEvent: {}
+[8.761724] (-) TimerEvent: {}
+[8.862648] (-) TimerEvent: {}
+[8.963412] (-) TimerEvent: {}
+[9.064389] (-) TimerEvent: {}
+[9.165479] (-) TimerEvent: {}
+[9.266603] (-) TimerEvent: {}
+[9.367595] (-) TimerEvent: {}
+[9.468733] (-) TimerEvent: {}
+[9.626807] (-) TimerEvent: {}
+[9.727887] (-) TimerEvent: {}
+[9.828970] (-) TimerEvent: {}
+[9.930670] (-) TimerEvent: {}
+[10.031792] (-) TimerEvent: {}
+[10.132879] (-) TimerEvent: {}
+[10.234155] (-) TimerEvent: {}
+[10.335241] (-) TimerEvent: {}
+[10.436605] (-) TimerEvent: {}
+[10.471902] (rplidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[10.472974] (rplidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/./sdk/src/sdkcommon.h:48\x1b[m\x1b[K,\n'}
+[10.473862] (rplidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/sdk/src/arch/linux/net_socket.cpp:10\x1b[m\x1b[K:\n'}
+[10.474834] (rplidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/./sdk/include/rplidar_protocol.h:59:14:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[10.476117] (rplidar_ros2) StderrLine: {'line': b'   59 |     _u8 data[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[10.478714] (rplidar_ros2) StderrLine: {'line': b'      |              \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.481160] (rplidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[10.483595] (rplidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/./sdk/src/sdkcommon.h:48\x1b[m\x1b[K,\n'}
+[10.488622] (rplidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/sdk/src/arch/linux/net_socket.cpp:10\x1b[m\x1b[K:\n'}
+[10.489525] (rplidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/./sdk/include/rplidar_cmd.h:260:18:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[10.491460] (rplidar_ros2) StderrLine: {'line': b'  260 |     _u8  payload[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[10.493230] (rplidar_ros2) StderrLine: {'line': b'      |                  \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.536865] (-) TimerEvent: {}
+[10.585615] (rplidar_ros2) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/rplidar_scan_publisher.dir/sdk/src/hal/thread.cpp.o\x1b[0m\n'}
+[10.637132] (-) TimerEvent: {}
+[10.742409] (-) TimerEvent: {}
+[10.848090] (-) TimerEvent: {}
+[10.951512] (-) TimerEvent: {}
+[10.989356] (rplidar_ros2) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding CXX object CMakeFiles/rplidar_scan_publisher.dir/sdk/src/rplidar_driver.cpp.o\x1b[0m\n'}
+[11.051752] (-) TimerEvent: {}
+[11.154779] (-) TimerEvent: {}
+[11.259841] (-) TimerEvent: {}
+[11.365424] (-) TimerEvent: {}
+[11.468634] (-) TimerEvent: {}
+[11.569711] (-) TimerEvent: {}
+[11.670598] (-) TimerEvent: {}
+[11.771500] (-) TimerEvent: {}
+[11.873068] (-) TimerEvent: {}
+[11.974057] (-) TimerEvent: {}
+[12.077308] (-) TimerEvent: {}
+[12.181926] (-) TimerEvent: {}
+[12.284601] (-) TimerEvent: {}
+[12.308018] (rplidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[12.308942] (rplidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/./sdk/src/sdkcommon.h:48\x1b[m\x1b[K,\n'}
+[12.309765] (rplidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/sdk/src/hal/thread.cpp:35\x1b[m\x1b[K:\n'}
+[12.310769] (rplidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/./sdk/include/rplidar_protocol.h:59:14:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[12.312329] (rplidar_ros2) StderrLine: {'line': b'   59 |     _u8 data[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[12.316173] (rplidar_ros2) StderrLine: {'line': b'      |              \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[12.318387] (rplidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[12.320779] (rplidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/./sdk/src/sdkcommon.h:48\x1b[m\x1b[K,\n'}
+[12.323583] (rplidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/sdk/src/hal/thread.cpp:35\x1b[m\x1b[K:\n'}
+[12.326854] (rplidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/./sdk/include/rplidar_cmd.h:260:18:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[12.329501] (rplidar_ros2) StderrLine: {'line': b'  260 |     _u8  payload[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[12.332591] (rplidar_ros2) StderrLine: {'line': b'      |                  \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[12.335374] (rplidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/sdk/src/hal/thread.cpp:43\x1b[m\x1b[K:\n'}
+[12.338133] (rplidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/./sdk/src/arch/linux/thread.hpp:\x1b[m\x1b[K In static member function \xe2\x80\x98\x1b[01m\x1b[Kstatic rp::hal::Thread rp::hal::Thread::create(thread_proc_t, void*)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[12.340485] (rplidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/./sdk/src/arch/linux/thread.hpp:48:77:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcast between incompatible function types from \xe2\x80\x98\x1b[01m\x1b[Kthread_proc_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int (*)(void*)\x1b[m\x1b[K\xe2\x80\x99} to \xe2\x80\x98\x1b[01m\x1b[Kvoid* (*)(void*)\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wcast-function-type\x1b[m\x1b[K]\n'}
+[12.343322] (rplidar_ros2) StderrLine: {'line': b'   48 |     pthread_create((pthread_t *)&newborn._handle, NULL, (void * (*)(void *))\x1b[01;35m\x1b[Kproc\x1b[m\x1b[K, data);\n'}
+[12.346151] (rplidar_ros2) StderrLine: {'line': b'      |                                                                             \x1b[01;35m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[12.384840] (-) TimerEvent: {}
+[12.494208] (-) TimerEvent: {}
+[12.573939] (rplidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[12.574819] (rplidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/sdk/src/sdkcommon.h:48\x1b[m\x1b[K,\n'}
+[12.575789] (rplidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/sdk/src/rplidar_driver.cpp:35\x1b[m\x1b[K:\n'}
+[12.576825] (rplidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/./sdk/include/rplidar_protocol.h:59:14:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[12.579619] (rplidar_ros2) StderrLine: {'line': b'   59 |     _u8 data[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[12.581445] (rplidar_ros2) StderrLine: {'line': b'      |              \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[12.583062] (rplidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[12.584744] (rplidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/sdk/src/sdkcommon.h:48\x1b[m\x1b[K,\n'}
+[12.586362] (rplidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/sdk/src/rplidar_driver.cpp:35\x1b[m\x1b[K:\n'}
+[12.588134] (rplidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/./sdk/include/rplidar_cmd.h:260:18:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[12.590068] (rplidar_ros2) StderrLine: {'line': b'  260 |     _u8  payload[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[12.591781] (rplidar_ros2) StderrLine: {'line': b'      |                  \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[12.594315] (-) TimerEvent: {}
+[12.698314] (-) TimerEvent: {}
+[12.799461] (-) TimerEvent: {}
+[12.815478] (rplidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/sdk/src/rplidar_driver.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void rp::standalone::rplidar::RPlidarDriverImplCommon::_ultraCapsuleToNormal(const rplidar_response_ultra_capsule_measurement_nodes_t&, rplidar_response_measurement_node_hq_t*, size_t&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[12.816464] (rplidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/sdk/src/rplidar_driver.cpp:1208:32:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kunsigned int\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wsign-compare\x1b[m\x1b[K]\n'}
+[12.817313] (rplidar_ros2) StderrLine: {'line': b' 1208 |             if ((\x1b[01;35m\x1b[Kdist_predict1 == 0xFFFFFE00\x1b[m\x1b[K) || (dist_predict1 == 0x1FF)) {\n'}
+[12.818303] (rplidar_ros2) StderrLine: {'line': b'      |                  \x1b[01;35m\x1b[K~~~~~~~~~~~~~~^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[12.819125] (rplidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/sdk/src/rplidar_driver.cpp:1216:32:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kunsigned int\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wsign-compare\x1b[m\x1b[K]\n'}
+[12.819951] (rplidar_ros2) StderrLine: {'line': b' 1216 |             if ((\x1b[01;35m\x1b[Kdist_predict2 == 0xFFFFFE00\x1b[m\x1b[K) || (dist_predict2 == 0x1FF)) {\n'}
+[12.820645] (rplidar_ros2) StderrLine: {'line': b'      |                  \x1b[01;35m\x1b[K~~~~~~~~~~~~~~^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[12.899684] (-) TimerEvent: {}
+[13.000650] (-) TimerEvent: {}
+[13.101657] (-) TimerEvent: {}
+[13.202540] (-) TimerEvent: {}
+[13.303550] (-) TimerEvent: {}
+[13.404562] (-) TimerEvent: {}
+[13.505756] (-) TimerEvent: {}
+[13.606678] (-) TimerEvent: {}
+[13.707585] (-) TimerEvent: {}
+[13.808477] (-) TimerEvent: {}
+[13.909439] (-) TimerEvent: {}
+[14.010369] (-) TimerEvent: {}
+[14.111269] (-) TimerEvent: {}
+[14.212198] (-) TimerEvent: {}
+[14.313177] (-) TimerEvent: {}
+[14.414107] (-) TimerEvent: {}
+[14.515047] (-) TimerEvent: {}
+[14.616100] (-) TimerEvent: {}
+[14.716939] (-) TimerEvent: {}
+[14.817793] (-) TimerEvent: {}
+[14.918625] (-) TimerEvent: {}
+[15.019463] (-) TimerEvent: {}
+[15.120318] (-) TimerEvent: {}
+[15.221141] (-) TimerEvent: {}
+[15.322104] (-) TimerEvent: {}
+[15.423094] (-) TimerEvent: {}
+[15.523911] (-) TimerEvent: {}
+[15.624707] (-) TimerEvent: {}
+[15.725535] (-) TimerEvent: {}
+[15.826455] (-) TimerEvent: {}
+[15.927278] (-) TimerEvent: {}
+[15.950256] (rplidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[15.951029] (rplidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/src/rplidar_scan_publisher.cpp:38\x1b[m\x1b[K:\n'}
+[15.951552] (rplidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/./sdk/include/rplidar_protocol.h:59:14:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[15.952140] (rplidar_ros2) StderrLine: {'line': b'   59 |     _u8 data[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[15.952902] (rplidar_ros2) StderrLine: {'line': b'      |              \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[15.953426] (rplidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[15.954001] (rplidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/src/rplidar_scan_publisher.cpp:38\x1b[m\x1b[K:\n'}
+[15.954521] (rplidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/bots/autoBot/lidar_ws/src/rplidar_ros/./sdk/include/rplidar_cmd.h:260:18:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[15.955012] (rplidar_ros2) StderrLine: {'line': b'  260 |     _u8  payload[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[15.955469] (rplidar_ros2) StderrLine: {'line': b'      |                  \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[16.027464] (-) TimerEvent: {}
+[16.128278] (-) TimerEvent: {}
+[16.229122] (-) TimerEvent: {}
+[16.330018] (-) TimerEvent: {}
+[16.430838] (-) TimerEvent: {}
+[16.531653] (-) TimerEvent: {}
+[16.632514] (-) TimerEvent: {}
+[16.733327] (-) TimerEvent: {}
+[16.834208] (-) TimerEvent: {}
+[16.935014] (-) TimerEvent: {}
+[17.035824] (-) TimerEvent: {}
+[17.136641] (-) TimerEvent: {}
+[17.237484] (-) TimerEvent: {}
+[17.338391] (-) TimerEvent: {}
+[17.439196] (-) TimerEvent: {}
+[17.539992] (-) TimerEvent: {}
+[17.640769] (-) TimerEvent: {}
+[17.741634] (-) TimerEvent: {}
+[17.843433] (-) TimerEvent: {}
+[17.944303] (-) TimerEvent: {}
+[18.045120] (-) TimerEvent: {}
+[18.146032] (-) TimerEvent: {}
+[18.246876] (-) TimerEvent: {}
+[18.347720] (-) TimerEvent: {}
+[18.448582] (-) TimerEvent: {}
+[18.549413] (-) TimerEvent: {}
+[18.650294] (-) TimerEvent: {}
+[18.751102] (-) TimerEvent: {}
+[18.851915] (-) TimerEvent: {}
+[18.952720] (-) TimerEvent: {}
+[19.053609] (-) TimerEvent: {}
+[19.154439] (-) TimerEvent: {}
+[19.255243] (-) TimerEvent: {}
+[19.356065] (-) TimerEvent: {}
+[19.456977] (-) TimerEvent: {}
+[19.558445] (-) TimerEvent: {}
+[19.659586] (-) TimerEvent: {}
+[19.760547] (-) TimerEvent: {}
+[19.861419] (-) TimerEvent: {}
+[19.962466] (-) TimerEvent: {}
+[20.063292] (-) TimerEvent: {}
+[20.164312] (-) TimerEvent: {}
+[20.265384] (-) TimerEvent: {}
+[20.366255] (-) TimerEvent: {}
+[20.467082] (-) TimerEvent: {}
+[20.568047] (-) TimerEvent: {}
+[20.668940] (-) TimerEvent: {}
+[20.769789] (-) TimerEvent: {}
+[20.870560] (-) TimerEvent: {}
+[20.971423] (-) TimerEvent: {}
+[21.072235] (-) TimerEvent: {}
+[21.173049] (-) TimerEvent: {}
+[21.273851] (-) TimerEvent: {}
+[21.374612] (-) TimerEvent: {}
+[21.475487] (-) TimerEvent: {}
+[21.576354] (-) TimerEvent: {}
+[21.677171] (-) TimerEvent: {}
+[21.777998] (-) TimerEvent: {}
+[21.878800] (-) TimerEvent: {}
+[21.979616] (-) TimerEvent: {}
+[22.080439] (-) TimerEvent: {}
+[22.181249] (-) TimerEvent: {}
+[22.282068] (-) TimerEvent: {}
+[22.382871] (-) TimerEvent: {}
+[22.483675] (-) TimerEvent: {}
+[22.584544] (-) TimerEvent: {}
+[22.685343] (-) TimerEvent: {}
+[22.786173] (-) TimerEvent: {}
+[22.886916] (-) TimerEvent: {}
+[22.987721] (-) TimerEvent: {}
+[23.088545] (-) TimerEvent: {}
+[23.189381] (-) TimerEvent: {}
+[23.290257] (-) TimerEvent: {}
+[23.391143] (-) TimerEvent: {}
+[23.492091] (-) TimerEvent: {}
+[23.592927] (-) TimerEvent: {}
+[23.693789] (-) TimerEvent: {}
+[23.794648] (-) TimerEvent: {}
+[23.895794] (-) TimerEvent: {}
+[23.996632] (-) TimerEvent: {}
+[24.097420] (-) TimerEvent: {}
+[24.198249] (-) TimerEvent: {}
+[24.299058] (-) TimerEvent: {}
+[24.399834] (-) TimerEvent: {}
+[24.500669] (-) TimerEvent: {}
+[24.601883] (-) TimerEvent: {}
+[24.703456] (-) TimerEvent: {}
+[24.717299] (rplidar_ros2) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable rplidar_scan_publisher\x1b[0m\n'}
+[24.803646] (-) TimerEvent: {}
+[24.904436] (-) TimerEvent: {}
+[25.005330] (-) TimerEvent: {}
+[25.106408] (-) TimerEvent: {}
+[25.207296] (-) TimerEvent: {}
+[25.308203] (-) TimerEvent: {}
+[25.409541] (-) TimerEvent: {}
+[25.510690] (-) TimerEvent: {}
+[25.611702] (-) TimerEvent: {}
+[25.712560] (-) TimerEvent: {}
+[25.813647] (-) TimerEvent: {}
+[25.914578] (-) TimerEvent: {}
+[26.011713] (rplidar_ros2) StdoutLine: {'line': b'[100%] Built target rplidar_scan_publisher\n'}
+[26.014787] (-) TimerEvent: {}
+[26.055129] (rplidar_ros2) CommandEnded: {'returncode': 0}
+[26.115095] (-) TimerEvent: {}
+[26.216172] (-) TimerEvent: {}
+[26.242310] (rplidar_ros2) JobProgress: {'identifier': 'rplidar_ros2', 'progress': 'install'}
+[26.283950] (rplidar_ros2) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/ubuntu/bots/autoBot/lidar_ws/build/rplidar_ros2'], 'cwd': '/home/ubuntu/bots/autoBot/lidar_ws/build/rplidar_ros2', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ubuntu'), ('SSH_CLIENT', '10.0.0.122 61438 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/ubuntu/.vscode-server/bin/f80445acd5a3dadef24aa209168452a3d97cc326/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ubuntu/ros2_foxy/ros2-linux/opt/yaml_cpp_vendor/lib:/home/ubuntu/ros2_foxy/ros2-linux/opt/rviz_ogre_vendor/lib:/home/ubuntu/ros2_foxy/ros2-linux/lib'), ('BROWSER', '/home/ubuntu/.vscode-server/bin/f80445acd5a3dadef24aa209168452a3d97cc326/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/ubuntu'), ('OLDPWD', '/home/ubuntu/bots/autoBot/lidar_ws/src'), ('TERM_PROGRAM_VERSION', '1.64.2'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-099592a9-1b82-49f2-8273-6c658d118375.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/ubuntu/.vscode-server/bin/f80445acd5a3dadef24aa209168452a3d97cc326/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/ubuntu/.vscode-server/bin/f80445acd5a3dadef24aa209168452a3d97cc326/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/ubuntu/ros2_foxy/ros2-linux'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'ubuntu'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/ubuntu/ros2_foxy/ros2-linux/lib/aarch64-linux-gnu/pkgconfig:/home/ubuntu/ros2_foxy/ros2-linux/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '3'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/ubuntu/ros2_foxy/ros2-linux/bin:/home/ubuntu/.vscode-server/bin/f80445acd5a3dadef24aa209168452a3d97cc326/bin/remote-cli:/home/ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-9519c50bea.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/ubuntu/ros2_foxy/ros2-linux'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/ubuntu/bots/autoBot/lidar_ws/build/rplidar_ros2'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '10.0.0.122 61438 10.0.0.203 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ubuntu/ros2_foxy/ros2-linux/lib/python3.8/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/ubuntu/ros2_foxy/ros2-linux')]), 'shell': False}
+[26.316498] (-) TimerEvent: {}
+[26.325515] (rplidar_ros2) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[26.327299] (rplidar_ros2) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[26.330611] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/launch/rplidar_a3_launch.py\n'}
+[26.367977] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/launch/rplidar_launch.py\n'}
+[26.404316] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/launch/rplidar_s1_launch.py\n'}
+[26.416660] (-) TimerEvent: {}
+[26.440992] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/launch/rplidar_s1_tcp_launch.py\n'}
+[26.478081] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/launch/view_rplidar_a3_launch.py\n'}
+[26.514883] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/launch/view_rplidar_launch.py\n'}
+[26.516812] (-) TimerEvent: {}
+[26.555327] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/launch/view_rplidar_s1_launch.py\n'}
+[26.596697] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/launch/view_rplidar_s1_tcp_launch.py\n'}
+[26.617042] (-) TimerEvent: {}
+[26.634863] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/rviz/rplidar_ros2.rviz\n'}
+[26.678238] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/lib/rplidar_ros2/rplidar_scan_publisher\n'}
+[26.717331] (-) TimerEvent: {}
+[26.729962] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/ament_index/resource_index/package_run_dependencies/rplidar_ros2\n'}
+[26.788321] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/ament_index/resource_index/parent_prefix_path/rplidar_ros2\n'}
+[26.817673] (-) TimerEvent: {}
+[26.849396] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/environment/ament_prefix_path.sh\n'}
+[26.892424] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/environment/ament_prefix_path.dsv\n'}
+[26.917882] (-) TimerEvent: {}
+[26.935027] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/environment/path.sh\n'}
+[26.977835] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/environment/path.dsv\n'}
+[27.018104] (-) TimerEvent: {}
+[27.019083] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/local_setup.bash\n'}
+[27.059098] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/local_setup.sh\n'}
+[27.101767] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/local_setup.zsh\n'}
+[27.118411] (-) TimerEvent: {}
+[27.156052] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/local_setup.dsv\n'}
+[27.218807] (-) TimerEvent: {}
+[27.222889] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/package.dsv\n'}
+[27.263123] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/ament_index/resource_index/packages/rplidar_ros2\n'}
+[27.302052] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[27.318986] (-) TimerEvent: {}
+[27.342202] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[27.384552] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/cmake/rplidar_ros2Config.cmake\n'}
+[27.419324] (-) TimerEvent: {}
+[27.423962] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/cmake/rplidar_ros2Config-version.cmake\n'}
+[27.466913] (rplidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/ubuntu/bots/autoBot/lidar_ws/install/rplidar_ros2/share/rplidar_ros2/package.xml\n'}
+[27.519653] (-) TimerEvent: {}
+[27.524735] (rplidar_ros2) CommandEnded: {'returncode': 0}
+[27.623334] (-) TimerEvent: {}
+[27.727110] (-) TimerEvent: {}
+[27.828098] (-) TimerEvent: {}
+[27.884102] (rplidar_ros2) JobEnded: {'identifier': 'rplidar_ros2', 'rc': 0}
+[27.889518] (-) EventReactorShutdown: {}
