@@ -65,3 +65,12 @@ Mappping and Localisation
 Install Ros2 foxy 
 adding rplidar -- https://github.com/Slamtec/rplidar_ros/tree/ros2
 SLAM: https://index.ros.org/r/cartographer/github-ros2-cartographer/#foxy
+    : https://github.com/SteveMacenski/slam_toolbox.git ros2
+    or 
+    sudo apt install ros-foxy-slam-toolbox
+Navigation2: https://github.com/ros-planning/navigation2 
+            or 
+            sudo apt install ros-<ros2-distro>-navigation2
+            sudo apt install ros-<ros2-distro>-nav2-bringup
+            https://navigation.ros.org/getting_started/index.html#getting-started
+colcon build --symlink-install
