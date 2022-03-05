@@ -56,7 +56,7 @@ Issue: Failed to load delegate from libedgetpu.so.1
 
 Issue: server.bind(ADDR)
     OSError: [Errno 98] Address already in use
-
-Solution: Port is already allocated:
+Port is already allocated
+Solution:
 netstat -tulpn
 kill <pid>
