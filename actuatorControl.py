@@ -18,7 +18,7 @@ class actuator:
 
         self.channel_list = (self.__RL_F,self.__RL_R,self.__RR_R,self.__RR_F,self.__FL_R,self.__FL_F,self.__FR_F,self.__FR_R)
         self.channel_forward = (self.__RL_F,self.__RR_F,self.__FL_F,self.__FR_F)
-        self.channel_rev = (self.__RL_R,self.__RR_R,self.__FL_R,self.__FR_R)
+        self.channel_rev = (self.__RL_R)
         self.channel_right = (self.__RR_R,self.__RL_F,self.__FL_R,self.__FR_F)
         self.channel_left = (self.__FL_F,self.__FR_R,self.__RL_R,self.__RR_F)
         self.channel_Rup = (self.__FR_F,self.__RL_F)
@@ -27,6 +27,7 @@ class actuator:
         self.channel_Ldown = (self.__FR_R,self.__RL_R)
         self.channel_RTurn = (self.__RL_F,self.__RR_R,self.__FL_F,self.__FR_R)
         self.channel_LTurn = (self.__RL_F,self.__RR_R,self.__FL_F,self.__FR_R)
+
 
     def __del__(self):
         self.gpio.cleanup()
@@ -37,6 +38,8 @@ class actuator:
             mode = self.gpio.getmode()
             print("** GPIO Initialised Mode:", mode)
             self.gpio.setup(self.channel_list, gpio.OUT, initial = gpio.LOW)
+            self.pwm = self.gpio.PWM(12, 100)
+            self.pwm.start(40)
         except:
             print("** Unable to initialise gpio")
 
@@ -75,10 +78,10 @@ class actuator:
         time.sleep(.5)
 
 ## Test
-# t = actuator()
-# t.setup_gpio()
-# t.movement_auto(1)
-# time.sleep(.5)
+t = actuator()
+t.setup_gpio()
+t.movement_auto(1)
+time.sleep(1)
 # t.movement_stop()
 # t.movement_auto(2)
 # time.sleep(.5)
@@ -88,5 +91,5 @@ class actuator:
 # t.movement_stop()
 # t.movement_auto(4)
 # time.sleep(.5)
-# t.movement_stop()
-# del t
+t.movement_stop()
+del t
