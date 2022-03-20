@@ -39,7 +39,7 @@ class actuator:
             print("** GPIO Initialised Mode:", mode)
             self.gpio.setup(self.channel_list, gpio.OUT, initial = gpio.LOW)
             self.pwm = self.gpio.PWM(12, 100)
-            self.pwm.start(40)
+            self.pwm.start(30)
         except:
             print("** Unable to initialise gpio")
 
@@ -75,21 +75,22 @@ class actuator:
     def movement_stop(self):
         print("**** Stopped")
         self.gpio.output(self.channel_list, gpio.LOW)
-        time.sleep(.5)
+        time.sleep(.2)
 
-## Test
-t = actuator()
-t.setup_gpio()
-t.movement_auto(1)
-time.sleep(1)
-# t.movement_stop()
-# t.movement_auto(2)
-# time.sleep(.5)
-# t.movement_stop()
-# t.movement_auto(3)
-# time.sleep(.5)
-# t.movement_stop()
-# t.movement_auto(4)
-# time.sleep(.5)
-t.movement_stop()
-del t
+# Test
+    def test(self):
+        # t = actuator()
+        # t.setup_gpio()
+        self.movement_auto(1)
+        time.sleep(1)
+        self.movement_stop()
+        # del t
+
+if __name__ == "__main__":
+    t= actuator()
+    t.setup_gpio()
+    i = 0
+    while(i < 10):
+        t.test()
+        time.sleep(1)
+        i = i+1;

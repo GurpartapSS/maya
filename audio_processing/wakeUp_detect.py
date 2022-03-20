@@ -25,8 +25,8 @@ class HotWord:
         self.__num_keywords = 1
         self.__keyword = 'sheldon'
         self.__model_path = pvp.MODEL_PATH
-        self.__key_access = ''
-        self.__keyword_path = ['Models/sheldon_en_raspberry-pi_v2_1_0.ppn']
+        self.__key_access = 'TuaIF+y+/aqXBV8ak4erG8idJLW4hnKnGEspRh9kLxtxh31ApU9V2A=='
+        self.__keyword_path = ['../Models/sheldon_en_raspberry-pi_v2_1_0.ppn']
         self.__input_device_index = 2
         self.__lib_path = pvp.LIBRARY_PATH
         self.__sample_format = pyaudio.paInt16
