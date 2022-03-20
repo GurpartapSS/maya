@@ -73,8 +73,9 @@ def read_msg(msg):
     
     motor.movement_auto(direction)
 
-print(f" Starting Server .... ")
-motor = actuatorControl.actuator()
-motor.setup_gpio()
-start()
+if __name__ == "__main__":
+    print(f" Starting Server .... ")
+    motor = actuatorControl.actuator()
+    motor.setup_gpio()
+    start()
 
