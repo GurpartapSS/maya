@@ -3,6 +3,7 @@
 import cv2
 import tflite_runtime.interpreter as tflite
 import numpy as np
+from cam_motor import cam_motor
 
 class faceCoral:
     def __init__(self):
@@ -12,6 +13,10 @@ class faceCoral:
         self.input_details = self.interpreter.get_input_details() #list of input details -- expected size of input
         self.output_details = self.interpreter.get_output_details() #list of output details -- Index #0 Boxes #1 Categories #2 Scores
         self.scoreTHreshold = 0.7
+        self.motorStep = 64
+
+        self.motor = cam_motor()
+        self.motor.setup()
 
 
     def detectFace_AND_apply_boundingBox(self):
@@ -23,6 +28,7 @@ class faceCoral:
                 break
             self._inpH = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
             self._inpW = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
+            # print(self._inpH, self._inpW)
             img = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             img = cv2.resize(img,(320,320))
             input_data = np.expand_dims(img, axis=0)
@@ -47,13 +53,20 @@ class faceCoral:
 
 
     def detect_movement(self, coord):
-        if(coord[1] < self._inpW / 4):
-            print("Moving left")
-            print(coord[1], self._inpW/4)
-        elif(coord[3] > self._inpW * .75):
-            print("Moving right")
-            print(coord[3], self._inpW*3/4)
-        pass
+        center_W = (coord[1]+coord[3])//2
+        motion_ang = abs(self._inpW/2 - center_W) // self.motorStep
+        if motion_ang != 0:
+            print("Moving.. ",motion_ang, " center at..",center_W)
+            if(center_W < (self._inpW/2) - 2*self.motorStep):
+                print("Moving left")
+                print(coord[1], self._inpW/4)
+                angle = 7 + 1
+                self.motor.rotate(angle)
+            elif(center_W > (self._inpW/2) + 2*self.motorStep):
+                print("Moving right")
+                print(coord[3], self._inpW*3/4)
+                angle = 7 - 1
+                self.motor.rotate(angle)
 
 
 if __name__ == '__main__':
