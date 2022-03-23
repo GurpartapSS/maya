@@ -5,6 +5,7 @@ class cam_motor:
         self.gp = gpio
         self.gp.setmode(gpio.BCM)
         mode = self.gp.getmode()
+        self.__PMW = 7
         print("** GPIO Initialised for cam, Mode:", mode)
     
     def setup(self):
@@ -12,13 +13,15 @@ class cam_motor:
         self.servo = self.gp.PWM(12, 50)
 
         self.servo.start(0)
-        self.servo.ChangeDutyCycle(7)
+        self.servo.ChangeDutyCycle(self.__PMW)
         time.sleep(.2)
         self.servo.ChangeDutyCycle(0)
-        print("waiting")
+        print("waiting for motion in cam ..")
 
-    def rotate(self,PWM):
-        self.servo.ChangeDutyCycle(PWM)
+    def rotate(self,motion):
+        self.__PMW = self.__PMW + motion
+        print("noew PWM ..",self.__PMW)
+        self.servo.ChangeDutyCycle(self.__PMW)
         time.sleep(.05)
         self.servo.ChangeDutyCycle(0)
         time.sleep(.05)

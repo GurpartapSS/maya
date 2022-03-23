@@ -1,9 +1,10 @@
 # All Models available @ https://coral.ai/models/all/
 
+import time
 import cv2
 import tflite_runtime.interpreter as tflite
 import numpy as np
-from cam_motor import cam_motor
+from camListener import cam_motor
 
 class faceCoral:
     def __init__(self):
@@ -14,12 +15,16 @@ class faceCoral:
         self.output_details = self.interpreter.get_output_details() #list of output details -- Index #0 Boxes #1 Categories #2 Scores
         self.scoreTHreshold = 0.7
         self.motorStep = 64
-
+        self.moving = 0
         self.motor = cam_motor()
         self.motor.setup()
 
 
     def detectFace_AND_apply_boundingBox(self):
+        if self.moving > 3:
+            self.moving = self.moving + 1
+        elif self.moving == 20:
+            self.moving = 0
         cap = cv2.VideoCapture(0)
 
         while True:
@@ -54,19 +59,27 @@ class faceCoral:
 
     def detect_movement(self, coord):
         center_W = (coord[1]+coord[3])//2
-        motion_ang = abs(self._inpW/2 - center_W) // self.motorStep
+        motion_ang = abs(self._inpW/2 - center_W) // (self.motorStep *2)
         if motion_ang != 0:
-            print("Moving.. ",motion_ang, " center at..",center_W)
-            if(center_W < (self._inpW/2) - 2*self.motorStep):
-                print("Moving left")
-                print(coord[1], self._inpW/4)
-                angle = 7 + 1
-                self.motor.rotate(angle)
-            elif(center_W > (self._inpW/2) + 2*self.motorStep):
-                print("Moving right")
-                print(coord[3], self._inpW*3/4)
-                angle = 7 - 1
-                self.motor.rotate(angle)
+            print("face on sides for times .. ",self.moving)
+            if self.moving < 3:
+                self.moving = self.moving + 1
+                return
+            elif self.moving == 3:
+                self.moving = self.moving + 1
+                print("Moving.. ",motion_ang, " center at..",center_W)
+                if(center_W < (self._inpW/2) - 2*self.motorStep):
+                    print("Moving left")
+                    print(coord[1], self._inpW/4)
+                    angle = 1
+                    self.motor.rotate(angle)
+                elif(center_W > (self._inpW/2) + 2*self.motorStep):
+                    print("Moving right")
+                    print(coord[3], self._inpW*3/4)
+                    angle = -1
+                    self.motor.rotate(angle)
+        else:
+            self.moving = 0
 
 
 if __name__ == '__main__':
