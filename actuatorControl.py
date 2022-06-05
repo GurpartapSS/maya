@@ -9,16 +9,16 @@ class actuator:
         #define the GPIO pins that we will use 
         self.__RL_F = 5    #RL-F --> Rear_Left_Forward
         self.__RL_R = 6
-        self.__RR_R = 13
-        self.__RR_F = 19
-        self.__FL_R = 12
-        self.__FL_F = 16
+        self.__RR_R = 19
+        self.__RR_F = 13
+        self.__FL_R = 16
+        self.__FL_F = 26
         self.__FR_F = 20
         self.__FR_R = 21
 
         self.channel_list = (self.__RL_F,self.__RL_R,self.__RR_R,self.__RR_F,self.__FL_R,self.__FL_F,self.__FR_F,self.__FR_R)
         self.channel_forward = (self.__RL_F,self.__RR_F,self.__FL_F,self.__FR_F)
-        self.channel_rev = (self.__RL_R)
+        self.channel_rev = (self.__RL_R,self.__RR_R,self.__FL_R,self.__FR_R)
         self.channel_right = (self.__RR_R,self.__RL_F,self.__FL_R,self.__FR_F)
         self.channel_left = (self.__FL_F,self.__FR_R,self.__RL_R,self.__RR_F)
         self.channel_Rup = (self.__FR_F,self.__RL_F)
@@ -38,8 +38,9 @@ class actuator:
             mode = self.gpio.getmode()
             print("** GPIO Initialised Mode:", mode)
             self.gpio.setup(self.channel_list, gpio.OUT, initial = gpio.LOW)
+            self.gpio.setup(12,self.gpio.OUT)
             self.pwm = self.gpio.PWM(12, 100)
-            self.pwm.start(30)
+            self.pwm.start(50)
         except:
             print("** Unable to initialise gpio")
 
@@ -81,16 +82,17 @@ class actuator:
     def test(self):
         # t = actuator()
         # t.setup_gpio()
+        self.movement_stop()
         self.movement_auto(1)
         time.sleep(1)
         self.movement_stop()
         # del t
 
-if __name__ == "__main__":
-    t= actuator()
-    t.setup_gpio()
-    i = 0
-    while(i < 10):
-        t.test()
-        time.sleep(1)
-        i = i+1;
+# if __name__ == "__main__":
+#     t= actuator()
+#     t.setup_gpio()
+#     i = 0
+#     while(i < 4):
+#         t.test()
+#         time.sleep(1)
+#         i = i+1;
