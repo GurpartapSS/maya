@@ -5,6 +5,7 @@ import constants
 
 nc = constants.networkConstant()
 jc = constants.joystickConstant()
+dir = constants.directions()
 SERVER = socket.gethostbyname(socket.gethostname())
 ADDR = (SERVER, nc.PORT)
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -42,7 +43,7 @@ def start():
 
 def read_msg(msg):
     print(f"** recv msg {int(msg)}")
-    dir = "STOP"
+    direction = 0
     ## Check if any valid bit is set
     if (int(msg) & 127):
         acc = int((msg)[jc.BUTTON_ACC])
@@ -53,26 +54,28 @@ def read_msg(msg):
         rotate_right = int((msg)[jc.BUTTON_ROTR])
         right_up = int((msg)[jc.BUTTON_RIGHT_UP])
         if(acc):
-            dir = "up"
+            direction = dir.FORW
         elif(rev):
-            dir = "back"
+            direction = dir.BACK
         elif(left):
-            dir = "left"
+            direction = dir.LEFT
         elif(right):
-            dir = "right"
+            direction = dir.RIGHT
         elif(rotate_left):
-            dir = "rotate_left"
+            direction = dir.ROT_LEFT
         elif(rotate_right):
-            dir = "rotate_right"
+            direction = dir.ROT_RIGHT
         elif(right_up):
-            dir = "right_up"
+            direction = dir.RIGHT_UP
     else:
         print("Stop!")
+        motor.movement_stop()
     
-    motor.movement_auto(dir)
+    motor.movement_auto(direction)
 
-print(f" Starting Server .... ")
-motor = actuatorControl.actuator()
-motor.setup_gpio()
-start()
+if __name__ == "__main__":
+    print(f" Starting Server .... ")
+    motor = actuatorControl.actuator()
+    motor.setup_gpio()
+    start()
 

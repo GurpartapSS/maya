@@ -56,8 +56,8 @@ Issue: Failed to load delegate from libedgetpu.so.1
 
 Issue: server.bind(ADDR)
     OSError: [Errno 98] Address already in use
-
-Solution: Port is already allocated:
+Port is already allocated
+Solution:
 netstat -tulpn
 kill <pid>
 
@@ -74,7 +74,6 @@ Navigation2: https://github.com/ros-planning/navigation2
             sudo apt install ros-<ros2-distro>-nav2-bringup
             https://navigation.ros.org/getting_started/index.html#getting-started
 colcon build --symlink-install
-
 
 Camera Integration:
 Install cv_brdige on the server 
