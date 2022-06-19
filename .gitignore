@@ -1,2 +1,3 @@
-__pycache__/
-./audio_processing/__pycache__/
+*__pycache__*
+server_ws/*
+lidar_ws/*
