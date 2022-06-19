@@ -1,3 +1,6 @@
+[submodule "server_ws/src/vision_opencv"]
+	path = server_ws/src/vision_opencv
+	url = https://github.com/ros-perception/vision_opencv.git
 [submodule "server_ws/src/slam_toolbox"]
 	path = server_ws/src/slam_toolbox
 	url = https://github.com/SteveMacenski/slam_toolbox.git

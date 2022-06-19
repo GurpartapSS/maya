@@ -74,3 +74,8 @@ Navigation2: https://github.com/ros-planning/navigation2
             sudo apt install ros-<ros2-distro>-nav2-bringup
             https://navigation.ros.org/getting_started/index.html#getting-started
 colcon build --symlink-install
+
+Camera Integration:
+Install cv_brdige on the server 
+Install v4l2_camera for ROS2 on the remote device
+reference: https://medium.com/swlh/raspberry-pi-ros-2-camera-eef8f8b94304
