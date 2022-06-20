@@ -79,3 +79,6 @@ Camera Integration:
 Install cv_brdige on the server 
 Install v4l2_camera for ROS2 on the remote device
 reference: https://medium.com/swlh/raspberry-pi-ros-2-camera-eef8f8b94304
+
+Adding object detection from server to update Rviz map:
+https://google.github.io/mediapipe/solutions/objectron.html
