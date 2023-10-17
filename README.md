@@ -10,3 +10,5 @@
 * usb coral accelerator - Tensorflowlite (currently only used for on-bot CV)
 * microphone
 * Mecanum OMN wheels
+
+![alt text](./Media/Bot_Framework.jpg)
