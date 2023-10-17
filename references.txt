@@ -79,3 +79,19 @@ Camera Integration:
 Install cv_brdige on the server 
 Install v4l2_camera for ROS2 on the remote device
 reference: https://medium.com/swlh/raspberry-pi-ros-2-camera-eef8f8b94304
+
+
+SLAM:
+
+
+Install the necessary ROS2 packages: You will need to install the slam_toolbox and rplidar_ros2 packages. You can install them using apt or build them from source using colcon.
+
+Launch the RPLidar node: Use the ros2 launch rplidar_ros2 rplidar.launch.py command to start the RPLidar node.
+
+Launch the slam_toolbox node: Use the ros2 launch slam_toolbox online_sync_launch.py command to start the slam_toolbox node.
+
+Visualize the map: Use the ros2 run rviz2 rviz2 command to open RViz and visualize the map. Make sure that you set the Fixed Frame to map and add the OccupancyGrid display to see the map.
+
+Move the RPLidar around the environment: Move the RPLidar around the environment to capture the scans and build the map.
+
+Note that the exact commands and launch files may vary depending on your specific setup and requirements. Make sure to check the documentation for the slam_toolbox and rplidar_ros2 packages for more detailed instructions.

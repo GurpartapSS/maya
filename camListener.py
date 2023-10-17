@@ -20,11 +20,11 @@ class cam_motor:
 
     def rotate(self,motion):
         self.__PMW = self.__PMW + motion
-        print("noew PWM ..",self.__PMW)
+        print("now PWM ..",self.__PMW)
         self.servo.ChangeDutyCycle(self.__PMW)
-        time.sleep(.05)
+        time.sleep(.1)
         self.servo.ChangeDutyCycle(0)
-        time.sleep(.05)
+        time.sleep(.1)
 
     def __del__(self):
         self.servo.stop()
