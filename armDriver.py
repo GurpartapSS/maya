@@ -11,15 +11,15 @@ class arm:
         # SG90 servo motor specifications
         self.shoulder_motor = 1
         self.arm_motor = 2
-        self.wrist_motor = 0
-        self.base_motor = 3
+        self.base_motor = 0
+        self.wrist_motor = 3
 
         self.pulse_width_min = 1800  # Minimum pulse width in microseconds
         self.pulse_width_max = 7800  # Maximum pulse width in microseconds
         self.pulse_width_center = 4800  # understood right?!
         self.dcCache = {self.wrist_motor:self.pulse_width_center, self.shoulder_motor:6000,
                             self.base_motor:self.pulse_width_center, self.arm_motor:6000}
-        self.min_step_Size = 100
+        self.min_step_Size = 200
         self.partName = deque()
         self.partMotion = deque()
         self.resolution = 1
@@ -31,27 +31,30 @@ class arm:
         self.pca = PCA9685(i2c_bus)
         self.pca.frequency = 50  # Set PWM frequency to 50 Hz for SG90 servo motor
 
+        self.moveToCenter()
+
     def movePartByDC(self):
         while(len(self.partName) != 0):
             part = self.partName.popleft()
             motion = 1 if self.partMotion.popleft() == 1 else -1
             if(part in self.dcCache):
-                dc_new = (motion * self.min_step_Size) + self.dcCache[part]
+                cacheDC = (motion * self.min_step_Size) + self.dcCache[part]
+                dc_new = cacheDC if (self.pulse_width_min < cacheDC < self.pulse_width_max) else self.dcCache[part]
                 self.dcCache[part] = dc_new
                 print(f"moving part {part} to DC {dc_new}")
                 self.pca.channels[part].duty_cycle = dc_new
-                time.sleep(.4)
+                time.sleep(.2)
     
     def movePartByAngle(self, part, angle):
         self.pca.channels[part].duty_cycle = angle
 
     def moveToCenter(self):
         self.pca.channels[self.base_motor].duty_cycle = self.pulse_width_center
-        time.sleep(.4)
+        time.sleep(.3)
         self.pca.channels[self.wrist_motor].duty_cycle = self.pulse_width_center
-        time.sleep(.4)
+        time.sleep(.3)
         self.pca.channels[self.shoulder_motor].duty_cycle = 6000
-        time.sleep(.4)
+        time.sleep(.3)
         self.pca.channels[self.arm_motor].duty_cycle = 6000
     
     def __delete__(self):
