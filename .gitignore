@@ -1,3 +1,5 @@
 *__pycache__*
 server_ws/*
 lidar_ws/*
+env_bot/*
+audio_processing/__pycache__/*
