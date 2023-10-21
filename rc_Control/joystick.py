@@ -7,7 +7,7 @@ pygame.joystick.init()
 
 isconnected = False
 
-def get_button(jz):
+def get_button(jz, ht):
 
     DATA_MSG = 0
     for i, val in enumerate(jz):
@@ -46,11 +46,12 @@ if __name__ == "__main__":
         while True:
             pygame.event.get()  # Get the latest events from Pygame
             button_state = [joystick.get_button(i) for i in range(joystick.get_numbuttons())]
+            hats = [joystick.get_hat(i) for i in range(joystick.get_numhats())]
 
             # Loop through each button
-            if any(button_state):  # If button is pressed
+            if any(button_state or hats):  # If button is pressed
                 # print(f"Button {button_state} is pressed")
-                get_button(button_state)
+                get_button(button_state, hats)
                 time.sleep(0.1)  # Add a delay to control the rate of sending the button value
     finally:
         # Clean up the joystick and Pygame

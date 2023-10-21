@@ -65,6 +65,7 @@ class arm:
         # should return the value for each joint 
         #message is 16 bit integer
         # lower 8 bit is positive movement and upper 8 bit is negative movement
+        print(f"received {message}")
         p1 = message & 0xff
         p2 = (message >> 8) & 0xff
         count = 0 
