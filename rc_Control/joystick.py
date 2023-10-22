@@ -11,7 +11,7 @@ def get_button(jz, ht):
 
     DATA_MSG = 0
     for i, val in enumerate(jz):
-        print(f"button {i} value {val}")
+        # print(f"button {i} value {val}")
         DATA_MSG |= (val << i)
     print(DATA_MSG)
 
@@ -26,7 +26,7 @@ def get_button(jz, ht):
         rc.send(str(DATA_MSG))
         time.sleep(.3)
     
-    if jz[7] == 1:     
+    if jz[11] == 1:     
         rc.disconnection()
         del rc
         isconnected = False
@@ -46,12 +46,23 @@ if __name__ == "__main__":
         while True:
             pygame.event.get()  # Get the latest events from Pygame
             button_state = [joystick.get_button(i) for i in range(joystick.get_numbuttons())]
-            hats = [joystick.get_hat(i) for i in range(joystick.get_numhats())]
-
+            hat_state = [list(joystick.get_hat(0)) for i in range(joystick.get_numhats())]
+            # for i in hat_state:
+            #     button_state.extend(i)
             # Loop through each button
-            if any(button_state or hats):  # If button is pressed
-                # print(f"Button {button_state} is pressed")
-                get_button(button_state, hats)
+            hat_state = hat_state[0]
+            button_coded = []
+            if hat_state == None:
+                print("Error reading hat state")
+                button_coded = [0,0,0,0]
+            for val in hat_state:
+                    button_coded.append(1 if val == 1 else 0)
+                    button_coded.append(1 if val == -1 else 0)
+            button_coded.extend(button_state)
+            if(any(button_coded)):  # If button is pressed
+                # get_button(button_state[:10],hat_state)
+                print(f"{button_coded}")
+                get_button(button_coded)
                 time.sleep(0.1)  # Add a delay to control the rate of sending the button value
     finally:
         # Clean up the joystick and Pygame
