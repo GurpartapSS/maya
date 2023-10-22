@@ -1,6 +1,9 @@
 import RPi.GPIO as gpio
 import time
 from constants import directions
+from constants import joystickConstant
+
+jc = joystickConstant()
 
 class actuator:
     def __init__(self):
@@ -44,6 +47,37 @@ class actuator:
         except:
             print("** Unable to initialise gpio")
 
+    def read_msg(self, msg):
+        print(f"** recv msg {int(msg)}")
+        direction = 0
+        ## Check if any valid bit is set
+        if (int(msg) & 127):
+            acc = int((msg)[jc.BUTTON_ACC])
+            rev = int((msg)[jc.BUTTON_REV])
+            left = int((msg)[jc.BUTTON_LEFT])
+            right = int((msg)[jc.BUTTON_RIGHT])
+            rotate_left = int((msg)[jc.BUTTON_ROTL])
+            rotate_right = int((msg)[jc.BUTTON_ROTR])
+            right_up = int((msg)[jc.BUTTON_RIGHT_UP])
+            if(acc):
+                direction = dir.FORW
+            elif(rev):
+                direction = dir.BACK
+            elif(left):
+                direction = dir.LEFT
+            elif(right):
+                direction = dir.RIGHT
+            elif(rotate_left):
+                direction = dir.ROT_LEFT
+            elif(rotate_right):
+                direction = dir.ROT_RIGHT
+            elif(right_up):
+                direction = dir.RIGHT_UP
+        else:
+            print("Stop!")
+            self.movement_stop()
+        
+        self.movement_auto(direction)
 
     #define movement, if in automode, will move at default speed
     #if in manual mode, speed depends on the controller intensity

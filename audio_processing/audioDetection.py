@@ -10,13 +10,8 @@ class audioRec:
     def getText(self):
         global text
         with sr.Microphone() as source:
-<<<<<<< HEAD:audio_processing/audioDetection.py
-            print("Listening..")
-            audio = self.__r.listen(source)
-=======
             print("Listening for command ...")
             audio = self.__r.listen(source, timeout= 5)
->>>>>>> image_recognition:audioDetection.py
 
         try:
             text = self.__r.recognize_google(audio)
