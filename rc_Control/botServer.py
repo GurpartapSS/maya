@@ -11,13 +11,13 @@ sys.path.append(parent_dir)
 
 import socket
 import threading
-import actuatorControl
+from actuatorControl import actuator
 from constants import networkConstant, joystickConstant
 import armDriver
 
 nc = networkConstant()
 jc = joystickConstant()
-ac =actuatorControl()
+ac = actuator()
 arm = armDriver.arm()
 
 class rcServer:
@@ -37,7 +37,7 @@ class rcServer:
             if msg_length:
                 msg_length = int(msg_length)
                 msg = conns.recv(msg_length).decode(nc.FORMAT)
-                print(f"[{addr}] {msg}")
+                # print(f"[{addr}] {msg}")
                 if msg == nc.DISCONNECT_MSG:
                     connected = False
                 else:
@@ -54,9 +54,14 @@ class rcServer:
         while True:
             conn, addr = self.server.accept()
             # creating a new thread with target function hadle and passing args
-            thread = threading.Thread(target=self.handle_clinet, args=(conn, addr)) 
-            thread.start()
+            self.thread = threading.Thread(target=self.handle_clinet, args=(conn, addr)) 
+            self.thread.start()
             print(f"[Active connections] {threading.activeCount()-1}")
+
+    def __del__(self):
+        self.thread.join()
+        self.server.close()
+
 
 if __name__ == "__main__":
     # print(f" Starting Server .... ")
