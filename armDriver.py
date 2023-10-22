@@ -21,7 +21,8 @@ class arm:
         self.pulse_width_center = 4800  # understood right?!
         self.dcCache = {self.wrist_motor:self.pulse_width_center, self.shoulder_motor:6000,
                             self.base_motor:self.pulse_width_center, self.arm_motor:6000}
-        self.min_step_Size = 200
+        self.min_step_Size = 100
+        self.motion_step = 100
         self.partName = deque()
         self.partMotion = deque()
         self.resolution = 1
@@ -40,7 +41,7 @@ class arm:
             part = self.partName.popleft()
             motion = 1 if self.partMotion.popleft() == 1 else -1
             if(part in self.dcCache):
-                cacheDC = (motion * self.min_step_Size) + self.dcCache[part]
+                cacheDC = (motion * self.motion_step) + self.dcCache[part]
                 dc_new = cacheDC if (self.pulse_width_min < cacheDC < self.pulse_width_max) else self.dcCache[part]
                 self.dcCache[part] = dc_new
                 print(f"moving part {part} to DC {dc_new}")
@@ -71,7 +72,8 @@ class arm:
         count = 0 
         while(message & 0x3ff):
             if(message & 0x300):
-                self.resolution = max(self.resolution + (1 if message & 0x100 else -1),1)
+                self.resolution = min(max(self.resolution + (1 if message & 0x100 else -1),1),10)
+                self.motion_step = self.min_step_Size * self.resolution
                 print(f"new resolution {self.resolution}")
             s = message & self.mask_direction
             if (s):
