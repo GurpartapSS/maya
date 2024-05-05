@@ -12,4 +12,4 @@
 * Mecanum OMN wheels
 * 3d printed robot arm 
 
-![alt text](./Media/Bot_Framework.jpg)
+<!-- ![alt text](./Media/Bot_Framework.jpg)-->
