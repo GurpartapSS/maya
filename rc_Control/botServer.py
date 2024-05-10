@@ -13,7 +13,7 @@ import socket
 import threading
 from actuatorControl import actuator
 from constants import networkConstant, joystickConstant
-import armDriver
+import armControl.armDriver as armDriver
 
 nc = networkConstant()
 jc = joystickConstant()
