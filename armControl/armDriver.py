@@ -5,6 +5,10 @@ from collections import deque
 
 numberofparts = 4
 
+# base motor - 2500 to 8000 mid - 6000
+# base motor - 2500 to 8000 mid - 5500
+# base motor - 1500 to 7000 mid - 3500
+
 class arm:
 
     def __init__(self):
@@ -36,6 +40,15 @@ class arm:
 
         self.moveToCenter()
 
+    def move_servo_smoothly(self, channel, target_position, steps=50, delay=0.02):
+        current_position = self.pca.channels[channel].duty_cycle
+        increment = (target_position - self.current_position) / steps
+
+        for _ in range(steps):
+            current_position += increment
+            self.pca.channels[channel].duty_cycle = int(current_position)
+            time.sleep(delay)
+
     def movePartByDC(self):
         while(len(self.partName) != 0):
             part = self.partName.popleft()
@@ -66,7 +79,7 @@ class arm:
 
     def decode(self, message):
         # should return the value for each joint 
-        #message is 16 bit integer
+        # message is 16 bit integer
         # lower 8 bit is positive movement and upper 8 bit is negative movement
         print(f"received {message}")
         count = 0 
