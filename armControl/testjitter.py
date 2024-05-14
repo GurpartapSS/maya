@@ -61,16 +61,16 @@ if __name__ == "__main__":
         wr_angle = float(sys.argv[5])
         dc = ang2dutyCycle(1600, 7800, 4400, base_angle)
         print(f"converting ch 0 {base_angle}: dc {int(dc)}")
-        # move_servo_smoothly(0,dc)
+        move_servo_smoothly(2,dc)
         dc = ang2dutyCycle(7800, 1800, 4800, a1_angle)
         print(f"converting ch 1 {a1_angle}: dc {int(dc)}")
-        # move_servo_smoothly(1,dc)
+        move_servo_smoothly(0,dc)
         dc = ang2dutyCycle2(1600, 7600, a2_angle)
         print(f"converting ch 2 {a2_angle}: dc {int(dc)}")
-        # move_servo_smoothly(2,dc)
+        move_servo_smoothly(1,dc)
         dc = ang2dutyCycle(7800, 1800, 4800, wr_angle)
         print(f"converting ch 3 {wr_angle}: dc {int(dc)}")
-        # move_servo_smoothly(3,dc)
+        move_servo_smoothly(3,dc)
 
 
     # base motor - 180 degrees - 1600(somewhat less han 90) to 7800(full 90 to left) mid_dc - 4400
