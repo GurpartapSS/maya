@@ -59,6 +59,7 @@ if __name__ == "__main__":
         a1_angle = float(sys.argv[3])
         a2_angle = float(sys.argv[4])
         wr_angle = float(sys.argv[5])
+        cam_angle = float(sys.argv[6])
         dc = ang2dutyCycle(1600, 7800, 4400, base_angle)
         print(f"converting ch 0 {base_angle}: dc {int(dc)}")
         move_servo_smoothly(2,dc)
@@ -71,9 +72,12 @@ if __name__ == "__main__":
         dc = ang2dutyCycle(7800, 1800, 4800, wr_angle)
         print(f"converting ch 3 {wr_angle}: dc {int(dc)}")
         move_servo_smoothly(3,dc)
+        dc = ang2dutyCycle(7700, 1700, 4450, -base_angle)
+        print(f"converting ch 7 {wr_angle}: dc {int(dc)}")
+        move_servo_smoothly(3,dc)
 
-
-    # base motor - 180 degrees - 1600(somewhat less han 90) to 7800(full 90 to left) mid_dc - 4400
-    # arm1 motor - 180 degrees - 1800(somewhat less han 90) to 7800(full 90 back) mid_dc - 4800 negative value to increase from mid_dc
-    # arm2 motor - 180 degrees - 1600(somewhat less han 90) to 7600(full 90 forward) mid_dc - 4600 negative value to decrease from mid_dc
-    # wrist motor - 180 degrees - 1800(somewhat less han 90) to 7800(full 90 forward) mid_dc - 4800 negative value to decrease from mid_dc
+    #0 base motor - 180 degrees - 1600(somewhat less han 90) to 7800(full 90 to left) mid_dc - 4400
+    #1 arm1 motor - 180 degrees - 1800(somewhat less han 90) to 7800(full 90 back) mid_dc - 4800 negative value to increase from mid_dc
+    #2 arm2 motor - 180 degrees - 1600(somewhat less han 90) to 7600(full 90 forward) mid_dc - 4600 negative value to decrease from mid_dc
+    #3 wrist motor - 180 degrees - 1800(somewhat less han 90) to 7800(full 90 forward) mid_dc - 4800 negative value to decrease from mid_dc
+    #4 arm camera motor - 180 degrees - 1700(90)clockwise to 7700(full 90 forward) mid_dc - 4450 negative value to decrease from mid_dc

@@ -26,11 +26,14 @@ class armDriver:
     def isMoving(self):
        return self.moving
 
-    def set_jointStates(self, target_positions, steps=50, delay=0.02):
+    def set_jointStates(self, rad, target_positions, steps=50, delay=0.02):
         self.moving = 1
         threads = []
         for i, target_position in enumerate(target_positions):
-            thread = self.move_servo_thread(i, target_position)
+            if(rad == 1):
+                thread = self.move_servo_thread_rad(i, target_position)
+            else:
+                thread = self.move_servo_thread(i, target_position)
             threads.append(thread)
         self.barrier.wait()
         self.moving = 0
@@ -48,6 +51,29 @@ class armDriver:
         elif(channel == 3):
             dc = self.ang2dutyCycle(7800, 1800, 4800, angle)
             print(f"converting ch 3 {angle}: dc {int(dc)}")
+        elif(channel == 4):
+            dc = self.ang2dutyCycle(7700, 1700, 4450, angle)
+            print(f"converting ch 7 {angle}: dc {int(dc)}")
+        thread = threading.Thread(target=self.move_servo_smoothly, args=(channel, dc))
+        thread.start()
+        return thread
+    
+    def move_servo_thread_rad(self, channel, angle):
+        if(channel == 0):
+            dc = self.ang2dutyCycle(1600, 7800, 4400, angle)
+            print(f"converting ch 0 {angle}: dc {int(dc)}")
+        elif(channel == 1):
+            dc = self.ang2dutyCycle(7800, 1800, 4800, angle)
+            print(f"converting ch 1 {angle}: dc {int(dc)}")
+        elif(channel == 2):
+            dc = self.ang2dutyCycle2(1600, 7600, angle)
+            print(f"converting ch 2 {angle}: dc {int(dc)}")
+        elif(channel == 3):
+            dc = self.ang2dutyCycle(7800, 1800, 4800, angle)
+            print(f"converting ch 3 {angle}: dc {int(dc)}")
+        elif(channel == 4):
+            dc = self.ang2dutyCycle(1700, 7700, 4450, angle)
+            print(f"converting ch 7 {angle}: dc {int(dc)}")
         thread = threading.Thread(target=self.move_servo_smoothly, args=(channel, dc))
         thread.start()
         return thread

@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'arm_ws'
+package_name = 'arm_controller'
 
 setup(
     name=package_name,
@@ -20,9 +20,6 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'jMonitor = arm_ws.jointsMonitor:main',
-            'coordJointClient = arm_ws.coordJointClient:main',
-            'handTracking = arm_ws.handTracking:main',
         ],
     },
 )
