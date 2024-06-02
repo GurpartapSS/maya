@@ -20,6 +20,9 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'handTrack=arm_controller.handTracking:main',
+            'jointClient=arm_controller.coordJointClient:main',
+            'jsMonitor=arm_controller.jointsMonitor:main',
         ],
     },
 )

@@ -39,13 +39,13 @@ def ang2dutyCycle(back_dc, front_dc, mid_dc, angle):
         dc = abs(mid_dc - delta) if (front_dc > back_dc) else abs(mid_dc + delta)
     return dc
 # Example: Move multiple servos simultaneously using threading
-channels = [0,7]  # List of channels to control
+channels = [0,15]  # List of channels to control
 # duty_cycles = [4400, 5401, 4785, 5215]  # Define duty cycles for each channel
 # duty_cycles = [4400, 2853, 3019, 4433]  # Define duty cycles for each channel
 # duty_cycles = [4400, 4086, 5110, 3576]  # Define duty cycles for each channel
 # duty_cycles = [4400, 5572, 6568, 3604]  # Define duty cycles for each channel
 # duty_cycles = [4400, 4956, 6141, 3414]  # Define duty cycles for each channel
-base_angle = 0
+base_angle = 1
 dc0 = ang2dutyCycle(1600, 7800, 4400,base_angle)
 dc7 = ang2dutyCycle(1700, 7700, 4450, -(base_angle))
 duty_cycles = [dc0, dc7]  # Define duty cycles for each channel

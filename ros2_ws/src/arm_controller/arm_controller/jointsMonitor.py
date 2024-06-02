@@ -7,7 +7,7 @@ import time
 import sys
 import threading
 
-sys.path.append('/home/ubuntu/autoBot')
+sys.path.append('/home/ubuntu/maya')
 
 from armControl.armDriver2 import armDriver
 class JointStateMonitor(Node):
@@ -34,12 +34,11 @@ class JointStateMonitor(Node):
         #lock the queue at this moment
         with self.lock:  # Acquire the lock
             if self.q:
-                dutycycles = self.q.popleft()
+                positions, names = self.q.popleft()
+                print(names)
                 self.q.clear()
                 self.get_logger().info('Moving!')
-                for i, joints in enumerate(dutycycles):
-                    print(i,joints)
-                self.ad.set_jointStates(0, dutycycles)
+                self.ad.set_jointStates(0, positions, names)
                 self.get_logger().info('Moved!')
         #at this points remove all other entries from queue
 
@@ -57,12 +56,8 @@ class JointStateMonitor(Node):
         if(all_equal):
             return
         self.cachedJoints = joint_positions
-        print(self.cachedJoints)
-        print(joint_positions)
         with self.lock:
-            selected_joints = joint_positions[:3]+[joint_positions[4]]
-            self.q.appendleft(selected_joints)
-            self.get_logger().info('Appening jointStates: "%f"' % self.cachedJoints[1])
+            self.q.appendleft((joint_positions[:5],msg.name[:5]))
 
 class JointsController(Node):
 
@@ -108,9 +103,15 @@ class JointsController(Node):
 
 def main(args=None):
     rclpy.init(args=args)
+    if len(sys.argv) < 2:
+        print("Usage: ros2 run arm_controller JsMonitor <joint_name>")
+        return
+    print(f"Usage: ros2 run arm_controller JsMonitor {sys.argv[1]}")
+    if(int(sys.argv[1]) == 0):
+        joints_subscriber = JointStateMonitor()
+    else:
+        joints_subscriber = JointsController()
 
-    # jointStates_subscriber = JointStateMonitor()
-    joints_subscriber = JointsController()
     rclpy.spin(joints_subscriber)
     joints_subscriber.destroy_node()
     rclpy.shutdown()

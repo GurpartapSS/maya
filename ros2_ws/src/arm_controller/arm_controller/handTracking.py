@@ -10,7 +10,7 @@ import time
 import sys
 import threading
 
-sys.path.append('/home/ubuntu/autoBot')
+sys.path.append('/home/ubuntu/maya')
 
 from armControl.armDriver2 import armDriver
 from armControl.pidController import pidController
