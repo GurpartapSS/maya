@@ -25,7 +25,7 @@ class armDriver:
         self.q = deque()
          
         self.jointNameMap = {'bases_joint':0,'base_arm1_joint':1,'arm1_arm2_joint':2,
-                            'arm2_arm3_joint':3, 'arm3_wrist_joint':15}
+                            'arm2_arm3_joint':3, 'arm3_camera_joint':15}
     def isMoving(self):
        return self.moving
 
@@ -34,9 +34,6 @@ class armDriver:
         threads = []
         for i, target_position in enumerate(target_positions):
             if(names[i] in self.jointNameMap):
-                print(names[i])
-                if(names[i]=='arm3_wrist_joint'):
-                    target_position = -target_positions[2] 
                 if(rad == 1):
                     thread = self.move_servo_thread_rad(self.jointNameMap[names[i]], target_position)
                 else:
@@ -78,7 +75,7 @@ class armDriver:
         elif(channel == 3):
             dc = self.ang2dutyCycle(7800, 1800, 4800, angle)
             print(f"converting ch 3 {angle}: dc {int(dc)}")
-        elif(channel == 4):
+        elif(channel == 15):
             dc = self.ang2dutyCycle(1700, 7700, 4450, angle)
             print(f"converting ch 7 {angle}: dc {int(dc)}")
         thread = threading.Thread(target=self.move_servo_smoothly, args=(channel, dc))

@@ -24,7 +24,7 @@ class JointStateMonitor(Node):
         self.subscription
         self.start_time = time.time()
         self.starterFlag = 0
-        self.cachedJoints = []
+        self.cachedJoints = [0.0, 0.0, 0.0, 1.57, 0.0]
         self.moving = 0
         self.ad = armDriver()
 
@@ -49,15 +49,12 @@ class JointStateMonitor(Node):
             return
         self.start_time = current_time
         joint_positions = [round(x,2) for x in msg.position]
-        if(self.starterFlag == 0):
-            self.cachedJoints = joint_positions
-            self.starterFlag = 1
         all_equal = all(x == y for x, y in zip(joint_positions, self.cachedJoints))
         if(all_equal):
             return
         self.cachedJoints = joint_positions
         with self.lock:
-            self.q.appendleft((joint_positions[:5],msg.name[:5]))
+            self.q.appendleft((joint_positions,msg.name))
 
 class JointsController(Node):
 
@@ -72,7 +69,7 @@ class JointsController(Node):
         self.q = deque()
         self.subscription
         self.starterFlag = 0
-        self.cachedJoints = []
+        self.cachedJoints = [0.0, 0.0, 0.0, 1.57, 0.0]
         self.moving = 0
         self.ad = armDriver()
         self.timer = self.create_timer(3, self.timercallback) 
