@@ -1,0 +1,7 @@
+#Request - Height, Yaw, Depth
+float32 h
+float32 y
+float32 d
+---
+#Response - Radians
+float32[] joints
