@@ -101,7 +101,7 @@ class JointsController(Node):
 def main(args=None):
     rclpy.init(args=args)
     if len(sys.argv) < 2:
-        print("Usage: ros2 run arm_controller JsMonitor <joint_name>")
+        print("Usage: ros2 run arm_controller JsMonitor <0 - joint_states / 1 - joint_rad>")
         return
     print(f"Usage: ros2 run arm_controller JsMonitor {sys.argv[1]}")
     if(int(sys.argv[1]) == 0):
