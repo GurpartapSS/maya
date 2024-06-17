@@ -24,7 +24,7 @@ class JointStateMonitor(Node):
         self.subscription
         self.start_time = time.time()
         self.starterFlag = 0
-        self.cachedJoints = [0.0, 0.0, 0.0, 1.57, 0.0]
+        self.cachedJoints = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
         self.moving = 0
         self.ad = armDriver()
 
@@ -38,17 +38,17 @@ class JointStateMonitor(Node):
                 print(names)
                 self.q.clear()
                 self.get_logger().info('Moving!')
-                self.ad.set_jointStates(0, positions, names)
+                self.ad.set_jointStates(positions, names)
                 self.get_logger().info('Moved!')
         #at this points remove all other entries from queue
 
 
     def listener_callback(self, msg):
-        current_time = time.time()
-        if(current_time - self.start_time < 1):
-            return
-        self.start_time = current_time
-        joint_positions = [round(x,2) for x in msg.position]
+        # current_time = time.time()
+        # if(current_time - self.start_time < 1):
+        #     return
+        # self.start_time = current_time
+        joint_positions = [round(x,3) for x in msg.position]
         all_equal = all(x == y for x, y in zip(joint_positions, self.cachedJoints))
         if(all_equal):
             return
@@ -69,10 +69,13 @@ class JointsController(Node):
         self.q = deque()
         self.subscription
         self.starterFlag = 0
-        self.cachedJoints = [0.0, 0.0, 0.0, 1.57, 0.0]
+        self.cachedJoints = [0.0, 0.0, 1.57, 0.0, 0.0, 0.0]
+        self.jointnames = ['bases_joint','base_arm1_joint','arm1_arm2_joint',
+                            'arm2_arm3_joint','arm3_camera_joint','wrist_gripl_joint'] 
         self.moving = 0
         self.ad = armDriver()
-        self.timer = self.create_timer(3, self.timercallback) 
+        self.timer = self.create_timer(3, self.timercallback)
+        self.q.appendleft(self.cachedJoints)
         self.get_logger().info('Joints Controller created')
     
     def timercallback(self):
@@ -84,7 +87,7 @@ class JointsController(Node):
                 self.get_logger().info('Moving!')
                 for i, joints in enumerate(dutycycles):
                     print(i,joints)
-                self.ad.set_jointStates(1, dutycycles)
+                self.ad.set_jointStates(dutycycles, self.jointnames)
                 self.get_logger().info('Moved!')
         #at this points remove all other entries from queue
 

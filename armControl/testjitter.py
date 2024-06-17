@@ -78,6 +78,6 @@ if __name__ == "__main__":
 
     #0 base motor - 180 degrees - 1600(somewhat less han 90) to 7800(full 90 to left) mid_dc - 4400
     #1 arm1 motor - 180 degrees - 1800(somewhat less han 90) to 7800(full 90 back) mid_dc - 4800 negative value to increase from mid_dc
-    #2 arm2 motor - 180 degrees - 1600(somewhat less han 90) to 7600(full 90 forward) mid_dc - 4600 negative value to decrease from mid_dc
+    #2 arm2 motor - 180 degrees - 1600(somewhat less han 90) to 7600(full 90 forward) mid_dc - 4500 negative value to decrease from mid_dc
     #3 wrist motor - 180 degrees - 1800(somewhat less han 90) to 7800(full 90 forward) mid_dc - 4800 negative value to decrease from mid_dc
     #4 arm camera motor - 180 degrees - 1700(90)clockwise to 7700(full 90 forward) mid_dc - 4450 negative value to decrease from mid_dc

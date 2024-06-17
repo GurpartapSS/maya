@@ -13,7 +13,6 @@ import threading
 sys.path.append('/home/ubuntu/maya')
 
 from armControl.armDriver2 import armDriver
-from armControl.pidController import pidController
 
 class HandTrackingNode(Node):
     def __init__(self):
@@ -22,8 +21,8 @@ class HandTrackingNode(Node):
         self.msg = [0.0,0.0]
         self.publisherPoints_ = self.create_publisher(Float32MultiArray, 'hand_center', 10)
         self.cap = cv2.VideoCapture(0)
-        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
-        self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
+        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 128)
+        self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 128)
         self.bridge = CvBridge()
         self.mp_hands = mp.solutions.hands
         self.hands = self.mp_hands.Hands(
@@ -33,7 +32,6 @@ class HandTrackingNode(Node):
             min_tracking_confidence=0.5
         )
         self.timer = self.create_timer(0.1, self.timer_callback)
-        self.pid = pidController(1,0,0)
         self.coord_err = 0.1
         self.get_logger().info('Hand Tracking Node has been started.')
 
@@ -42,7 +40,6 @@ class HandTrackingNode(Node):
         if not success:
             self.get_logger().error('Failed to capture frame')
             return
-
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         results = self.hands.process(frame_rgb)
         msg = Float32MultiArray()
@@ -56,8 +53,12 @@ class HandTrackingNode(Node):
                 center_y = y + h // 2
                 cv2.circle(frame, (center_x, center_y), 5, (0, 0, 255), -1)
             msg.data = [float(center_x),float(center_y)]
+            if(abs(hand_landmarks.landmark[0].y-hand_landmarks.landmark[12].y) > 0.25):
+                msg.data.append(0)
+            else:
+                msg.data.append(1)
             if(len(msg.data)>0):
-                if(abs(center_x - 159) > 32 or abs(center_y - 119) > 24):
+                if(abs(center_x - 64) >8 or abs(center_y - 64) > 8):
                     self.publisherPoints_.publish(msg)
         image_message = self.bridge.cv2_to_imgmsg(frame, encoding='bgr8')
         self.publisher_.publish(image_message)
