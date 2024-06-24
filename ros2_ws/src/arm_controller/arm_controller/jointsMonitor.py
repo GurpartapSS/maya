@@ -38,6 +38,8 @@ class JointStateMonitor(Node):
                 print(names)
                 self.q.clear()
                 self.get_logger().info('Moving!')
+                positions[6] = round(positions[6]/0.06,3)
+                positions[7] = round(positions[7]/0.06,3)
                 self.ad.set_jointStates(positions, names)
                 self.get_logger().info('Moved!')
         #at this points remove all other entries from queue
@@ -75,30 +77,40 @@ class JointsController(Node):
         self.moving = 0
         self.ad = armDriver()
         self.timer = self.create_timer(3, self.timercallback)
-        self.q.appendleft(self.cachedJoints)
+        self.q.appendleft((self.cachedJoints,self.jointnames))
         self.get_logger().info('Joints Controller created')
     
     def timercallback(self):
         #lock the queue at this moment
         with self.lock:  # Acquire the lock
             if self.q:
-                dutycycles = self.q.popleft()
+                dutycycles, movedJointNames = self.q.popleft()
+            #at this points remove all other entries from queue
                 self.q.clear()
                 self.get_logger().info('Moving!')
                 for i, joints in enumerate(dutycycles):
                     print(i,joints)
-                self.ad.set_jointStates(dutycycles, self.jointnames)
+                self.ad.set_jointStates(dutycycles, movedJointNames)
                 self.get_logger().info('Moved!')
-        #at this points remove all other entries from queue
 
 
     def listener_callback(self, msg):
-        self.get_logger().info('Got new message')
         joint_positions = [round(x,2) for x in msg.joints]
-        print(joint_positions)
-        with self.lock:
-            self.q.appendleft(joint_positions)
-            self.get_logger().info('Appening jointStates: "%f"' % joint_positions[1])
+        jointsmoved = 0
+        movedJoints = []
+        movedJointNames = []
+        # check if there is change in an any joints
+        for i, joint in enumerate(joint_positions):
+            if(joint != self.cachedJoints[i]):
+                jointsmoved = 1
+                movedJoints.append(joint)
+                movedJointNames.append(self.jointnames[i])
+        if(jointsmoved == 1):
+            print(f"New Msg joints {joint_positions}")
+            with self.lock:
+                self.q.appendleft((movedJoints, movedJointNames))
+            self.cachedJoints = joint_positions
+        
 
 
 def main(args=None):

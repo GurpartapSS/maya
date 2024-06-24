@@ -6,8 +6,17 @@ import sys
 
 m_pi = 3.14159265358979323846
 
-def move_servo_smoothly(channel, target_position, steps=50, delay=0.02):
+def move_servo_smoothly(channel, target_position, min_steps=10, max_steps=50, delay=0.02):
     current_position = pca.channels[channel].duty_cycle
+    difference = abs(target_position - current_position)
+    
+    # Scale the steps based on the difference with a maximum difference of 8000
+    if difference > 300:
+        difference = 3000  # Cap the difference at 8000
+
+    steps = int(min_steps + (difference / 3000) * (max_steps - min_steps))
+    steps = max(min(steps, max_steps), min_steps)
+    
     increment = (target_position - current_position) / steps
 
     for _ in range(steps):
