@@ -4,8 +4,9 @@
 
 * Rpi4
 * ubuntu 20.04
-* Ros2 Foxy
+* Ros2 Humble
 * Rplidar a1
+* Esp32
 * MIPI Camera
 * usb coral accelerator - Tensorflowlite (currently only used for on-bot CV)
 * microphone
