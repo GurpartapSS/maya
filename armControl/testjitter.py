@@ -6,8 +6,17 @@ import sys
 
 m_pi = 3.14159265358979323846
 
-def move_servo_smoothly(channel, target_position, steps=50, delay=0.02):
+def move_servo_smoothly(channel, target_position, min_steps=10, max_steps=50, delay=0.02):
     current_position = pca.channels[channel].duty_cycle
+    difference = abs(target_position - current_position)
+    
+    # Scale the steps based on the difference with a maximum difference of 8000
+    if difference > 300:
+        difference = 3000  # Cap the difference at 8000
+
+    steps = int(min_steps + (difference / 3000) * (max_steps - min_steps))
+    steps = max(min(steps, max_steps), min_steps)
+    
     increment = (target_position - current_position) / steps
 
     for _ in range(steps):
@@ -78,6 +87,6 @@ if __name__ == "__main__":
 
     #0 base motor - 180 degrees - 1600(somewhat less han 90) to 7800(full 90 to left) mid_dc - 4400
     #1 arm1 motor - 180 degrees - 1800(somewhat less han 90) to 7800(full 90 back) mid_dc - 4800 negative value to increase from mid_dc
-    #2 arm2 motor - 180 degrees - 1600(somewhat less han 90) to 7600(full 90 forward) mid_dc - 4600 negative value to decrease from mid_dc
+    #2 arm2 motor - 180 degrees - 1600(somewhat less han 90) to 7600(full 90 forward) mid_dc - 4500 negative value to decrease from mid_dc
     #3 wrist motor - 180 degrees - 1800(somewhat less han 90) to 7800(full 90 forward) mid_dc - 4800 negative value to decrease from mid_dc
     #4 arm camera motor - 180 degrees - 1700(90)clockwise to 7700(full 90 forward) mid_dc - 4450 negative value to decrease from mid_dc

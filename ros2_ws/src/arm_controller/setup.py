@@ -1,5 +1,6 @@
 from setuptools import setup
-
+import os
+import glob
 package_name = 'arm_controller'
 
 setup(
@@ -10,18 +11,17 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name, 'launch'), glob.glob(os.path.join('launch', '*launch.[pxy][yma]*')))
     ],
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='ubuntu',
     maintainer_email='gurpartapsingh.sarkaria@gmail.com',
-    description='TODO: Package description',
-    license='TODO: License declaration',
-    tests_require=['pytest'],
+    description='Control physical bot iki',
+    license='Apache License 2.0',
     entry_points={
         'console_scripts': [
             'handTrack=arm_controller.handTracking:main',
-            'jointClient=arm_controller.coordJointClient:main',
             'jsMonitor=arm_controller.jointsMonitor:main',
         ],
     },
